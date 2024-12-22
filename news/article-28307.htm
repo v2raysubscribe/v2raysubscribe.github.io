@@ -90,6 +90,7 @@
                   				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">spring boot与profile</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">静态获取方式</a></li> <li><a href="#_lab2_0_1" rel="nofollow">autowire ProfileConfig</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>spring boot与profile</h2> <p>spring boot 的项目中不再使用xml的方式进行配置，并且，它还遵循着约定大于配置。</p> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>静态获取方式</h3> <p>静态工具类获取当前项目的profile环境。</p> <div class="ay1code"> <pre class="brush:java;">import org.springframework.beans.BeansException;  import org.springframework.context.ApplicationContext;  import org.springframework.context.ApplicationContextAware;  import org.springframework.stereotype.Component;    import java.util.Locale;    /**   *      */  /**   * @author wangjiuzhou (835540436@qq.com)   * @date 2018/10/27   * 项目名称:   * 类名: SpringContextUtil   * 描述： 获取bean的工具类，可用于在线程里面获取bean   */  @Component  public class SpringContextUtil implements ApplicationContextAware {        public static final String LOCAL_PROFILE = "local";      public static final String DEV_PROFILE = "dev";      public static final String TEST_PROFILE = "test";      public static final String PRO_PROFILE = "pro";          private static ApplicationContext context = null;          /* (non Javadoc)       * @Title: setApplicationContext       * @Description: spring获取bean工具类       * @param applicationContext       * @throws BeansException       * @see org.springframework.context.ApplicationContextAware#setApplicationContext(org.springframework.context.ApplicationContext)       */      @Override      public void setApplicationContext(ApplicationContext applicationContext)              throws BeansException {          context = applicationContext;      }         // 传入线程中      public static &lt;T&gt; T getBean(String beanName) {          return (T) context.getBean(beanName);      }         // 国际化使用      public static String getMessage(String key) {          return context.getMessage(key, null, Locale.getDefault());      }         // 获取当前环境      public static String getActiveProfile() {          return context.getEnvironment().getActiveProfiles()[0];      }  }  </pre> </div> <p>点评：</p> <p>这种方式在使用起来很方便也是现在各个博客文章所撰写的方式，在很多Service的业务代码中使用起来很方便，毕竟是静态的方式嘛！</p> <p>但是有一种缺陷，因为实现ApplicationContextAware接口，而spring中的这个接口是在所有的Bean注入完毕，才会执行setApplicationContext方法，那么问题来了，往往在项目中我们可能会对一些Bean进行一些config操作，例如：@Bean注入，而有时候我们会根据不同的profile进行不同的定制化config。这个时候恰恰我们的工具类SpringContextUtil还没有执行setApplicationContext此时工具类中的context对象还是null。就会出现异常的情况。下面的方式可以弥补这个缺陷。</p> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3>autowire ProfileConfig</h3> <p>使用这种方式首先声明一下，其实就相当于一个特殊的configBean一样，因为只有这样，这个类才不会在所有bean全部加载完毕后才能获取到context。</p> <div class="ay1code"> <pre class="brush:java;">import org.springframework.beans.factory.annotation.Autowired;  import org.springframework.context.ApplicationContext;  import org.springframework.context.annotation.Configuration;    /**   * @author wangjiuzhou (835540436@qq.com)   * @date 2018/11/07   *   * 获取当前项目环境：local、dev、test、pro   */  @Configuration  public class ProfileConfig {      public static final String LOCAL_PROFILE = "local";      public static final String DEV_PROFILE = "dev";      public static final String TEST_PROFILE = "test";      public static final String PRO_PROFILE = "pro";        @Autowired      private ApplicationContext context;        public String getActiveProfile() {          return context.getEnvironment().getActiveProfiles()[0];      }  }  </pre> </div> <p>点评：</p> <p>ProfileConfig ，首先是作为一个相当于Bean的形式存在着，此处的不在解释@configuration和@component的区别；</p> <p>注入ApplicationContext因为该接口extends于EnvironmentCapable，所以可以获取到环境的一些信息；</p> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-28306.htm">【Python开发】2. 变量、基本数据类型及其转换</a></p>
+                                        <p>下一个：<a href="/news/article-28769.htm">宠物店一年收入多少钱（宠物店一个月利润怎么样）</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -99,16 +100,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-24078.htm" title="猫咪领养协议免费模板下载大全（猫咪领养协议怎么写）">猫咪领养协议免费模板下载大全（猫咪领养协议怎么写）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-node-subscribe-links.htm" title="12月12日→23M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月12日→23M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-node-subscribe.htm" title="12月18日→19.9M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月18日→19.9M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-13-free-node-subscribe.htm" title="12月13日→22.1M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月13日→22.1M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-node-subscribe-links.htm" title="12月10日→22.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月10日→22.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-28307.htm" title="SpringBoot中获取profile的方法详解_java">SpringBoot中获取profile的方法详解_java</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-15-free-node-subscribe.htm" title="12月15日→18.9M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月15日→18.9M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-11-free-node-subscribe.htm" title="12月11日→21.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月11日→21.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-23651.htm" title="移动破碎制砂一体机租赁合同（移动制砂机租赁价格）">移动破碎制砂一体机租赁合同（移动制砂机租赁价格）</a></li>
-                        <li class="py-2"><a href="/news/article-25521.htm" title="北京农大动物医院营业时间电话是多少（北京中国农业大学动物医院营业时间）">北京农大动物医院营业时间电话是多少（北京中国农业大学动物医院营业时间）</a></li>
+                        <li class="py-2"><a href="/news/article-27838.htm" title="动物防疫工作内容（动物防疫工作要求）">动物防疫工作内容（动物防疫工作要求）</a></li>
+                        <li class="py-2"><a href="/news/article-24560.htm" title="springboot +restTemplate配置">springboot +restTemplate配置</a></li>
+                        <li class="py-2"><a href="/news/article-26916.htm" title="python读取文件夹的文件名">python读取文件夹的文件名</a></li>
+                        <li class="py-2"><a href="/news/article-24561.htm" title="宠物店猫粮狗粮一个月需要多少钱呢 宠物店猫粮狗粮一个月需要多少钱呢">宠物店猫粮狗粮一个月需要多少钱呢 宠物店猫粮狗粮一个月需要多少钱呢</a></li>
+                        <li class="py-2"><a href="/news/article-28770.htm" title="南京宠物领养日条件 南京宠物领养日活动">南京宠物领养日条件 南京宠物领养日活动</a></li>
+                        <li class="py-2"><a href="/news/article-29231.htm" title="广州市猫咪领养中心（广州去哪领养猫）">广州市猫咪领养中心（广州去哪领养猫）</a></li>
+                        <li class="py-2"><a href="/news/article-25978.htm" title="《24小时宠物医院》（青岛24小时宠物医院）">《24小时宠物医院》（青岛24小时宠物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-28769.htm" title="宠物店一年收入多少钱（宠物店一个月利润怎么样）">宠物店一年收入多少钱（宠物店一个月利润怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-24079.htm" title="动物疫苗的概念和分类（动物疫苗分几种）">动物疫苗的概念和分类（动物疫苗分几种）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-free-high-speed-nodes.htm" title="12月22日→19M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月22日→19M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -120,7 +121,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">40</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                     </ul>
     </div>
