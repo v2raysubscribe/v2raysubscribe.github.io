@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-29701.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>数据分析的工具（Numpy）</title>
+        <meta name="description" content="(一)简介 数据分析我们常用的工具Numpy,pandas,Matplotlib库，其中Numpy库是pandas库的基础，它们主要是用来处理一维及二维的表格数据，而Matplotlib库这是数据可视" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                                <li><a href="#">关于</a></li>
+                        <li><a href="#">联系</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>数据分析的工具（Numpy）</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>(一)简介</p> <p>数据分析我们常用的工具Numpy,pandas,Matplotlib库，其中Numpy库是pandas库的基础，它们主要是用来处理一维及二维的表格数据，而Matplotlib库这是数据可视化的利器。</p> <p>（二）Numpy基础</p> <p>引入方法：import numpy as np</p> <p>（1）Numpy的定义：</p> <p>官方解释：NumPy系统是Python的一种开源的数值计算扩展，这种工具可用来存储和处理大型矩阵，比Python自身的嵌套列表（nested list structure)结构要高效的多（该结构也可以用来表示矩阵（matrix））。</p> <p>简单来说：Numpy中含有矩阵matrix和数组array是NumPy里的两种数据类型，都可以用于处理行列表示的数字元素</p> <blockquote> <p>python数组和Numpy数组区别：</p> <p>（1）主要区别：numpy数组（array or matrix）创建时是固定大小，python数组（list）是动态的。更改ndarray的大小将创建一个新数组并删除原来的数组。(就是array 和list 的区别)</p> <p>（2）元素类型区别：</p> <p>NumPy数组中的元素都需要具有相同的数据类型，因此在内存中的大小相同。</p> <p>　　python的List可以存放不同类型的元素。</p> <p>　　例外情况：Python的原生数组里包含了NumPy的对象的时候，这种情况下就允许不同大小元素的数组。</p> </blockquote> <p>（2）array 和matrix的区别</p> <p>１．ｍａｔｒｉｘ只能是２维的，ａｒｒａｙ可以是任意维数。</p> <p>２．在这两个数据类型上执行相同的数学运算会得到不同的结果</p> <p>对于a,b两个matrices,a*b表示矩阵乘积</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/0742cfedc54ee8c7b9b92e85829c561a.jpg"></p> <blockquote> <p>矩阵乘法：</p> <p>1、当矩阵A的列数（column）等于矩阵B的行数（row）时，A与B可以相乘。</p> <p>2、矩阵C的行数等于矩阵A的行数，C的列数等于B的列数。</p> <p>3、乘积C的第m行第n列的元素等于矩阵A的第m行的元素与矩阵B的第n列对应元素乘积之和</p> </blockquote> <p>对于array来说，a*b表示逐个元素相乘</p> <p>&nbsp;</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/74e17e38f5fee639b48baf9388988007.jpg"></p> <p>**运算符表示的含义也不同，对于maxtrix来说，a**2表示a*a</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/bdfa5700d45c97bc6ec1982e6d361fd9.jpg"></p> <p>对于array来说，a**2表示数组里的数的平方</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/84182e9bec7578ed9263e509ab0712e3.jpg"></p> <p>（二）Numpy和python数组</p> <p>（1）打印结果不相同</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/9dea862f0b37609ba6363ce020e7f4d2.jpg"></p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/011e07277e506bc9be76193f94c6a17e.jpg"></p> <p>（2）索引相似点</p> <p>&nbsp;</p> <p>&nbsp;</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/44819a2d6817e0f57dbfa9c6ec5ef747.jpg"></p> <p>&nbsp;</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/5bdb6c7b033da9137f7d9a33aa33b9cc.jpg"></p> <p>&nbsp;</p> <p>切片是左闭右开。</p> <p>（3）进行数学计算不同</p> <p>Numpy作为一个数据处理的库能非常好的支持一些数学运算</p> <p>&nbsp;</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/c80e07c8cb64dc29c829626ea3847c6d.jpg"></p> <p>&nbsp;</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/6f6322d5e0882585181104d4a6c26927.jpg"></p> <p>（4）数据存储不同</p> <p>列表储存的是一维的数据，而数组则可以存储多维的数据：</p> <p>&nbsp;</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/d66930bbf3da98107074fcc906a1e203.jpg"></p> <p>&nbsp;</p> <p>&nbsp;</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/003509a5045bbabeb6842454695bce19.jpg"></p> <p>（三）Numpy建立数组的方式</p> <p>（1）np.array(列表)</p> <p>f=np.array([[1,2],[3.4],[5,6]])</p> <p>输出：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/94f9a55cfb62fd91b836a5b3530f7be4.jpg"></p> <p>&nbsp;</p> <p>（2）np.arrange(起点，终点，步长)：</p> <p>&nbsp;</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/3868bc01a98999f755c9471144f2ce6c.jpg"></p> <p>注意左闭右开</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/df10e38831c59a521276abdb55b06e43.jpg"></p> <p>&nbsp;</p> <p>&nbsp;</p> <p>（3）.reshape来改变np.arrange(行，列) 的形状</p> <p>a=np.arrange(12).reshape(3,4)</p> <p>输出：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/debab2d7ca8bde13cac29a7c7034e204.jpg"></p> <p>&nbsp;</p> <p>（4）np.random模块来创建随机一维数组</p> <p>1.np.random.randn(n)来创建一个服从正太分布 （均值为0，方差为1的分布）的n个随机数一维数组，代码如下：</p> <p>a=np.random.randn(3)</p> <p>打印：</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230207/7c46d91c1342dec0b4c8f3f9f1603205.jpg"></p> <p>2.通过np.random.randint(起始数，终止数(行，列))，我们可以随机生成从起始数到终止数的n行n列数组</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-29231.htm">广州市猫咪领养中心（广州去哪领养猫）</a></p>
+                                        <p>下一个：<a href="/news/article-29702.htm">同城免费领养宠物诈骗案例分享（宠物领养骗局）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-node-share-links.htm" title="12月14日→21.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月14日→21.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-28307.htm" title="SpringBoot中获取profile的方法详解_java">SpringBoot中获取profile的方法详解_java</a></li>
+                        <li class="py-2"><a href="/news/article-26452.htm" title="动物疫苗注射部位图片 动物疫苗注射部位图片大全">动物疫苗注射部位图片 动物疫苗注射部位图片大全</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-free-node-subscribe-links.htm" title="12月23日→19M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月23日→19M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25051.htm" title="重庆的宠物批发市场在哪里（重庆的宠物批发市场在哪里啊）">重庆的宠物批发市场在哪里（重庆的宠物批发市场在哪里啊）</a></li>
+                        <li class="py-2"><a href="/news/article-26451.htm" title="动物医院名字有创意两个字的吗英文翻译（动物医院 英文）">动物医院名字有创意两个字的吗英文翻译（动物医院 英文）</a></li>
+                        <li class="py-2"><a href="/news/article-29702.htm" title="同城免费领养宠物诈骗案例分享（宠物领养骗局）">同城免费领养宠物诈骗案例分享（宠物领养骗局）</a></li>
+                        <li class="py-2"><a href="/news/article-28306.htm" title="【Python开发】2. 变量、基本数据类型及其转换">【Python开发】2. 变量、基本数据类型及其转换</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-free-node-subscribe.htm" title="12月11日→21.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月11日→21.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe.htm" title="12月17日→20.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月17日→20.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">43</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
