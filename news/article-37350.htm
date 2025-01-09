@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-37350.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ASP.NET Core使用EF查询数据_实用技巧</title>
+        <meta name="description" content="1.3.1如果这是跟踪查询（后续会讲到），EF会检查数据是否表示已在上下文实例的更改跟踪器中的实体中。  1.3.2如果这是非跟踪查询（后续会讲到），EF会检查数据是否表示已在此查询的结果集中的实体中" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                                <li><a href="#">关于</a></li>
+                        <li><a href="#">联系</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>ASP.NET Core使用EF查询数据_实用技巧</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				  			 <div id="log-box">  				<div id="catalog"><ul id="catalog-ul"> <li><i class="be be-arrowright"></i> <a href="#title-0" title="1.3.1如果这是跟踪查询（后续会讲到），EF会检查数据是否表示已在上下文实例的更改跟踪器中的实体中。">1.3.1如果这是跟踪查询（后续会讲到），EF会检查数据是否表示已在上下文实例的更改跟踪器中的实体中。</a></li> <li><i class="be be-arrowright"></i> <a href="#title-1" title="1.3.2如果这是非跟踪查询（后续会讲到），EF会检查数据是否表示已在此查询的结果集中的实体中。">1.3.2如果这是非跟踪查询（后续会讲到），EF会检查数据是否表示已在此查询的结果集中的实体中。</a></li> </ul><span class="log-zd"><span class="log-close"><a title="隐藏目录"><i class="be be-cross"></i><strong>目录</strong></a></span></span></div>  			</div> <h2>1.查询生命周期</h2> <p>在进入正题时候，我们先来了解EF Core查询的生命周期。</p> <h3>1.1LINQ查询会由Entity Framework Core处理并生成给数据库提供程序可处理的表示形式（说白了就是生成给数据库可识别数据形式）。</h3> <ul> <li>发送的查询结果（查询表示形式）会被缓存，以便每次执行查询时无需进行1.1中处理。</li> </ul> <h3>1.2查询结果（查询表示形式）会传递到数据库提供程序</h3> <ul> <li>数据库提供程序会识别出查询的哪些部分可以在数据库中求值。</li> <li>查询的这些部分会转换为特定数据库的查询语言（例如，关系数据库的T-SQL）。</li> <li>一个或多个查询会发送到数据库并返回结果集（返回的是数据库中的值，而不是实体实例中的）。</li> </ul> <h3>1.3对于结果集中的每一项</h3> <span class="directory"></span><h4 id="title-0">1.3.1如果这是跟踪查询（后续会讲到），EF会检查数据是否表示已在上下文实例的更改跟踪器中的实体中。</h4> <ul> <li>如果是，则会返回现有实体。</li> <li>如果不是，则会创建新实体、设置更改跟踪并返回该新实体。</li> </ul> <span class="directory"></span><h4 id="title-1">1.3.2如果这是非跟踪查询（后续会讲到），EF会检查数据是否表示已在此查询的结果集中的实体中。</h4> <ul> <li>如果是，则会返回现有实体。非跟踪查询使用弱引用跟踪已返回的实体。如果具有相同标识的上一个结果超出范围，并运行垃圾回收，则可能会获得新的实体实例。</li> <li>如果不是，则会创建新实体并返回该新实体。</li> </ul> <h3>1.4执行查询时</h3> <p>当调用LINQ运算符时，只会生成查询的内存中表示形式。当我们使用查询结果（查询表示形式）时才会发送到数据库。导致查询发送到数据库的最常见操作如下：</p> <ul> <li>在for循环中循环访问结果：</li> </ul> <div class="ay1code"> <pre class="brush:csharp;">var blogs = from b in _context.Blog           select new           {              b.BlogId,              b.Url           };  //触发数据库查询  foreach(var blog in blogs)  {      var id = blog.BlogId;  }</pre> </div> <p>当我们执行完LINQ运算符的时候，从SQL Server Profiler监控里面可以看到，并没有执行的SQL语句，也就是说查询结果blogs并没有立即发送给数据库获取返回数据结果集。</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/c83a2b695488e2f9a30557a64780cd66.jpg"></p> <p>而当我们调试进去for循环时候，SQL Server Profiler监控里面可以看到出现了执行SQL语句。也就是说这时候查询结果blogs才执行发送给数据库返回结果集。</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/dcc621186d69678c0f53a8baafeda32b.jpg"></p> <ul> <li>使用ToList、ToArray、Single、Count等运算符</li> </ul> <div class="ay1code"> <pre class="brush:csharp;">_context.Blog.ToList();  _context.Blog.ToArray();  _context.Blog.Count();  _context.Blog.Single();  _context.Blog.First();</pre> </div> <p>执行这种形式运算符也会立即发送到数据库获取结果集的。具体执行过程呈现，这里大伙自行测试吧。</p> <ul> <li>将查询结果数据绑定到UI</li> </ul> <h2>2.跟踪查询与非跟踪查询</h2> <p>在1小节生命周期里面我们有提及过跟踪与非跟踪查询，现在我们来了解下这两种查询区别。</p> <h3>2.1跟踪查询</h3> <p>返回实体类型的查询是默认会被跟踪的，这表示如果这些实体实例有更改行为，会通过SaveChanges()持久化将更改的值更新到数据库中，但是如果更改的值跟实体实例的值相同，则不会持久化提交数据到数据库，这就是跟踪查询。在以下示例中，将检测到对博客链接所做的更改，并在 SaveChanges() 期间将这些更改持久化到数据库中。</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/0ddeb05f5114f51ec718063ce21a5264.jpg"></p> <div class="ay1code"> <pre class="brush:csharp;">//返回blog实体类型的查询是默认会被跟踪  var blog = _context.Blog.SingleOrDefault(b =&gt; b.BlogId == 1);  //检测对博客链接所做的更改  blog.Url = "1";  //持久化保存到数据库中  _context.SaveChanges();</pre> </div> <p>实体初始链接值是1，当我们点击Save按钮保存的时候，检测到对博客链接所做的更改值还是1的时候，并不会提交更改值到数据库中的。看看下图SQL Server Profiler监控就知道，并没有监控到对应有更新的T-SQL语句，也就是说并没有执行更新操作：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/d895326ca4c61642439772e7f2924935.jpg"></p> <p>当我们再把链接值更改为2点击保存时候，EF Core检测到博客链接值已经从1更改为2，就会持久化保存到数据库中。</p> <div class="ay1code"> <pre class="brush:csharp;">blog.Url = "2";</pre> </div> <p>废话少说，直接上图：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/75bf496b062190226e7edfae90231c52.jpg"></p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/6836fc5983ba918c42f84932aee9d78d.jpg"></p> <h3>2.2非跟踪查询</h3> <p>如果不需要更新从数据库中检索到的实体，则应使用非跟踪查询。可以将单个查询替换为非跟踪查询。</p> <div class="ay1code"> <pre class="brush:csharp;">var blogs = context.Blogs  //不用跟踪查询      .AsNoTracking()      .ToList();  //或者在上下文实例级别更改默认跟踪行为  context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;  var blogs = context.Blogs.ToList();</pre> </div> <p>还是一样老谭秘方事例，当你加上非跟踪查询标识后，无论怎么更改博客链接值，都不会持久化保存数据到数据库中的。</p> <div class="ay1code"> <pre class="brush:csharp;">var blogs = _context.Blog  //不用跟踪查询  .AsNoTracking()  .SingleOrDefault(m =&gt; m.BlogId == 1);  blogs.Url = "2";  _context.SaveChanges();</pre> </div> <p>直接上图跟踪结果：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/0062f882a66f86a3b25d4a9d1e26bd48.jpg"></p> <p>在这相信大家从该小节跟踪与非跟踪查询中事例描述中总算对1小节查询生命周期有一定理解吧。</p> <h3>2.3跟踪和自定义投影</h3> <p>即使查询的结果类型不是实体类型，默认情况下EF Core也会跟踪结果中包含的实体类型。在以下返回匿名类型的查询中，结果集中的Blog实例会被跟踪。</p> <div class="ay1code"> <pre class="brush:csharp;">var blog = context.Blogs      .Select(b =&gt;          new          {              Blog = b,              PostCount = b.Posts.Count()          });</pre> </div> <p>如果结果集包含来自LINQ组合的实体类型，EF Core将跟踪它们。</p> <div class="ay1code"> <pre class="brush:csharp;">var blog = context.Blogs      .Select(b =&gt;          new          {              Blog = b,              Post = b.Posts.OrderBy(p =&gt; p.Rating).LastOrDefault()          });</pre> </div> <p>如果结果集不包含任何实体类型，则不会执行跟踪。在以下查询中，我们返回匿名类型（具有实体中的某些值，但没有实际实体类型的实例）。查询中没有任何被跟踪的实体。</p> <div class="ay1code"> <pre class="brush:csharp;">var blog = context.Blogs      .Select(b =&gt;          new          {              Id = b.BlogId,              Url = b.Url          });</pre> </div> <p>EF Core支持执行顶级投影中的客户端评估。如果EF Core具体化实体实例以进行客户端评估，则会跟踪该实体实例。此处，由于我们要将blog实体传递到客户端方法StandardizeURL，因此EF Core也会跟踪博客实例。</p> <div class="ay1code"> <pre class="brush:csharp;">var blogs = context.Blogs      .OrderByDescending(blog =&gt; blog.Rating)      .Select(blog =&gt; new      {          Id = blog.BlogId,          Url = StandardizeUrl(blog)      })      .ToList();  public static string StandardizeUrl(Blog blog)  {      var url = blog.Url.ToLower();      if (!url.StartsWith("http://"))      {          url = string.Concat("http://", url);      }      return url;  }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-36866.htm">宠物粮食品牌取名怎么取好（宠物粮食品牌都有什么）</a></p>
+                                        <p>下一个：<a href="/news/article-37351.htm">三国杀武将登场特效（三国杀武将登场特效必须是动态皮肤吗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-37351.htm" title="三国杀武将登场特效（三国杀武将登场特效必须是动态皮肤吗）">三国杀武将登场特效（三国杀武将登场特效必须是动态皮肤吗）</a></li>
+                        <li class="py-2"><a href="/news/article-26917.htm" title="Vue3知识点整理 常用Composition API（3）- 生命周期、自定义hook、toRef">Vue3知识点整理 常用Composition API（3）- 生命周期、自定义hook、toRef</a></li>
+                        <li class="py-2"><a href="/news/article-32565.htm" title="宠物粮食生产需要什么条件呢 宠物粮食生产需要什么条件呢视频">宠物粮食生产需要什么条件呢 宠物粮食生产需要什么条件呢视频</a></li>
+                        <li class="py-2"><a href="/news/article-26451.htm" title="动物医院名字有创意两个字的吗英文翻译（动物医院 英文）">动物医院名字有创意两个字的吗英文翻译（动物医院 英文）</a></li>
+                        <li class="py-2"><a href="/news/article-31123.htm" title="和田哪里有宠物店卖（和田卖宠物的地方）">和田哪里有宠物店卖（和田卖宠物的地方）</a></li>
+                        <li class="py-2"><a href="/news/article-30665.htm" title="天津宠物狗免费领养地点（天津哪里有宠物领养的地方）">天津宠物狗免费领养地点（天津哪里有宠物领养的地方）</a></li>
+                        <li class="py-2"><a href="/news/article-28769.htm" title="宠物店一年收入多少钱（宠物店一个月利润怎么样）">宠物店一年收入多少钱（宠物店一个月利润怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-25522.htm" title="三国杀皮肤有特效吗（三国杀皮肤有特效吗多少钱）">三国杀皮肤有特效吗（三国杀皮肤有特效吗多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-free-high-speed-nodes.htm" title="12月31日→20.3M/S|2025年最新免费节点V2ray Subscribe订阅链接地址">12月31日→20.3M/S|2025年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25977.htm" title="长期上门收购各种宠物犬株洲（株洲哪里有收狗的）">长期上门收购各种宠物犬株洲（株洲哪里有收狗的）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">67</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
