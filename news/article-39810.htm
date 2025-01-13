@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-39810.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>java利用RestTemplate 发送post请求</title>
+        <meta name="description" content="我们可以先模拟一个请求响应，我这里用的moco（你们可以用其他方式） moco使用教程 具体代码如下： // 封装请求内容 Map&lt;String,Object&gt; params = MapU" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                                <li><a href="#">关于</a></li>
+                        <li><a href="#">联系</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>java利用RestTemplate 发送post请求</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>我们可以先模拟一个请求响应，我这里用的moco（你们可以用其他方式）</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://t.zoukankan.com/Teachertao-p-10556139.html"  rel="nofollow">moco使用教程</a></p> <p>具体代码如下：</p> <pre><code class="prism language-java"><span class="token comment">// 封装请求内容</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> params <span class="token operator">=</span> <span class="token class-name">MapUtil</span><span class="token punctuation">.</span><span class="token function">newHashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 请求的url</span> <span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"http://localhost:10086/login"</span><span class="token punctuation">;</span> params<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">,</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> params<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">,</span><span class="token number">123456</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token class-name">RestTemplate</span> restTemplate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RestTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token class-name">HttpHeaders</span> headers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HttpHeaders</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 设置请求头</span> headers<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token class-name">MediaType</span><span class="token punctuation">.</span><span class="token constant">APPLICATION_JSON</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token class-name">HttpEntity</span> httpEntity <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HttpEntity</span><span class="token punctuation">(</span>params<span class="token punctuation">,</span> headers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token class-name">ResponseEntity</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> entity <span class="token operator">=</span> restTemplate<span class="token punctuation">.</span><span class="token function">postForEntity</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> httpEntity<span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 打印响应结果</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>entity<span class="token punctuation">.</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p>响应结果：</p> <pre><code>{     "returnCode":"200",     "returnMessage":"提交成功，数据处理中，请 30 分钟后请调用增量查询结果接口,进行查看本次推送结果......",     "returnData":{         "size":1,         "time":"2022-04-15T09:48:55.938"     },     "returnCount":null } </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-39317.htm">手工宠物零食好卖吗现在（宠物手工零食培训）</a></p>
+                                        <p>下一个：<a href="/news/article-39811.htm">为什么代码规范要求SQL语句不要过多的join？</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-33508.htm" title="动物疫苗法律法规最新文件是什么（动物疫苗法案）">动物疫苗法律法规最新文件是什么（动物疫苗法案）</a></li>
+                        <li class="py-2"><a href="/news/article-31612.htm" title="广州哪里有猫领养（广州哪里有领养猫咪的地方）">广州哪里有猫领养（广州哪里有领养猫咪的地方）</a></li>
+                        <li class="py-2"><a href="/news/article-32566.htm" title="动物医院名片设计图片高清（动物医院名片设计图片高清大全）">动物医院名片设计图片高清（动物医院名片设计图片高清大全）</a></li>
+                        <li class="py-2"><a href="/news/article-25521.htm" title="北京农大动物医院营业时间电话是多少（北京中国农业大学动物医院营业时间）">北京农大动物医院营业时间电话是多少（北京中国农业大学动物医院营业时间）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-free-node-subscribe.htm" title="12月11日→21.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月11日→21.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe.htm" title="12月17日→20.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月17日→20.2M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-29231.htm" title="广州市猫咪领养中心（广州去哪领养猫）">广州市猫咪领养中心（广州去哪领养猫）</a></li>
+                        <li class="py-2"><a href="/news/article-37833.htm" title="动物注射疫苗后过敏反应的处理方法（动物打了疫苗的,伤了人怎么办）">动物注射疫苗后过敏反应的处理方法（动物打了疫苗的,伤了人怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-31122.htm" title="狗粮品牌排行榜有哪些品牌的（狗粮排行榜简析十大狗粮品牌）">狗粮品牌排行榜有哪些品牌的（狗粮排行榜简析十大狗粮品牌）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-node-subscribe.htm" title="1月5日→22.6M/S|免费节点V2ray/Shadowrocket/Clash/SSR2025年最新订阅链接地址">1月5日→22.6M/S|免费节点V2ray/Shadowrocket/Clash/SSR2025年最新订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">67</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
