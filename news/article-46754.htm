@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-46754.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Java的引用和内存</title>
+        <meta name="description" content="例子 public class Square {       long width;       public Square(long l) {            width = l;      " />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray Subscribe免费梯子节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2raysubscribe.github.io/news/article-46754.htm" />
+    <meta property="og:site_name" content="V2ray Subscribe免费梯子节点分享官网" />
+    <meta property="og:title" content="Java的引用和内存" />
+    <meta property="og:image" content="https://v2raysubscribe.github.io/uploads/20241210/d47f3489830be75ea2f9e8cdcf5ad1ff.webp" />
+        <meta property="og:release_date" content="2025-01-27T08:17:11" />
+    <meta property="og:updated_time" content="2025-01-27T08:17:11" />
+        <meta property="og:description" content="例子 public class Square {       long width;       public Square(long l) {            width = l;      " />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java的引用和内存">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://oss.maxcdn.com">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                                <li><a href="#">关于</a></li>
+                        <li><a href="#">联系</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Java的引用和内存</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3> <a id="_1" rel="nofollow"></a>例子</h3> <pre><code class="prism language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Square</span> <span class="token punctuation">{<!-- --></span>       <span class="token keyword">long</span> width<span class="token punctuation">;</span>       <span class="token keyword">public</span> <span class="token function">Square</span><span class="token punctuation">(</span><span class="token keyword">long</span> l<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>            width <span class="token operator">=</span> l<span class="token punctuation">;</span>       <span class="token punctuation">}</span>       <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String arg<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     	<span class="token comment">//声明了3个Square类型的变量a,b,c</span>     	<span class="token comment">//在stack中分配3个内存，名字为a,b,c</span>         Square a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">;</span>         <span class="token comment">//在heap中分配了一块新内存，里边包含自己的成员变量width值为42L，然后stack中的a指向这块内存</span>         a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Square</span><span class="token punctuation">(</span><span class="token number">42</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//在heap中分配了一块新内存，里边包含自己的成员变量width值为42L，然后stack中的b指向这块内存</span>         b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Square</span><span class="token punctuation">(</span><span class="token number">42</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//stack中的c也指向b所指向的内存 </span>         c <span class="token operator">=</span> b<span class="token punctuation">;</span>         <span class="token comment">//在stack中分配了一块内存，值为42   </span>         <span class="token keyword">long</span> s <span class="token operator">=</span> <span class="token number">42</span>L<span class="token punctuation">;</span>       <span class="token punctuation">}</span>  <span class="token punctuation">}</span> </code></pre> <p>以上代码在内存中的情况：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/72848dd3cea76511bfbd286d52f3a6b8.jpg" alt="Java的引用和内存"></p> <h3> <a id="_25" rel="nofollow"></a>如何来对各种不同的变量作比较？</h3> <p>java的数据类型分为：</p> <ol> <li>基本数据类型</li> <li>引用数据类型<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230205/472d4edcb0bb689556a73ccc6b6b0398.jpg" alt="Java的引用和内存"><br /> 上例中的变量a,b,c属于引用数据类型，s属于基本数据类型</li> </ol> <p>==强调栈中的比较，可以理解为地址比较<br /> ==可以用于<strong>基本数据类型</strong>相互比较，此时比较二者的<strong>值</strong>是否相等<br /> ==也可以用于<strong>引用数据类型</strong>的相互比较，此时比较二者的<strong>地址</strong>是否相等<br /> ==不能用于基本数据类型和引用数据类型比较，不同的基本数据类型之间也不能比较，例如string不能与char[]比较</p> <p>equals强调对象的内容比较<br /> equals不能用于基本数据类型比较，因为这是一个方法，不是运算符，继承自object<br /> equals用于进行对象的比较，比较二者的引用地址是否相同</p> <p>特殊情况：<br /> 1)数值型基本类型和数值型类会存在自动装箱和自动拆箱.<br /> 2)字符串会以常量形式存在, 如果多个字符串变量值相同, 则他们指向同一个地址.<br /> 3)数值类型会存在类型自动转换.</p> <h3> <a id="_48" rel="nofollow"></a>根据给出的例子判断</h3> <ul> <li> <p>由图可以看出a和b指向的不是同一个引用，所以a!=b</p> </li> <li> <p>一个Square类型不能与一个long型比较，编译就错误，所以不存在s==a这种比较</p> </li> <li> <p>由图可以看出b和c指向的是同一个引用，所以b==c</p> </li> <li> <p>程序会把s封装成一个Long类型，由于Square没有重写Object的equals方法，<br /> 所以调用的是Object类的equals方法，源码如下<br /> public boolean equals(Object obj) {<!-- --><br /> return (this == obj);<br /> }<br /> 其实就是判断两个引用是否相等，所以a.equals(s) == false</p> <p>在java中进行比较，我们需要根据比较的类型来选择合适的比较方式：</p> </li> </ul> <ol> <li>对象域，使用equals方法 。</li> <li>类型安全的枚举，使用equals或== 。</li> <li>可能为null的对象域 : 使用 == 和 equals 。</li> <li>数组域 : 使用 Arrays.equals 。</li> <li>除float和double外的原始数据类型 : 使用 == 。</li> <li>float类型: 使用Float.foatToIntBits转换成int类型，然后使用==。</li> <li>double类型: 使用Double.doubleToLongBit转换成long类型，然后使用==。</li> </ol> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-46264.htm">广州宠物医院领养 广州宠物医院领养猫</a></p>
+                                        <p>下一个：<a href="/news/article-46755.htm">宠物食品店名称怎么取（宠物食品起个品牌名字）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-38829.htm" title="动物医院管理软件系统（动物医院管理软件系统有哪些）">动物医院管理软件系统（动物医院管理软件系统有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-node-subscribe.htm" title="12月25日→19.4M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月25日→19.4M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36317.htm" title="在拦截器中获取 url 路径里面 @PathVariable 的参数值">在拦截器中获取 url 路径里面 @PathVariable 的参数值</a></li>
+                        <li class="py-2"><a href="/news/article-24131.htm" title="兽药疫苗冷藏室温度要求（兽用疫苗保存温度）">兽药疫苗冷藏室温度要求（兽用疫苗保存温度）</a></li>
+                        <li class="py-2"><a href="/news/article-41791.htm" title="win11系统打不开磁盘管理如何解决">win11系统打不开磁盘管理如何解决</a></li>
+                        <li class="py-2"><a href="/news/article-43778.htm" title="动物疫站给猫打疫苗收钱吗多少钱一针（动物防疫站给猫打疫苗贵吗）">动物疫站给猫打疫苗收钱吗多少钱一针（动物防疫站给猫打疫苗贵吗）</a></li>
+                        <li class="py-2"><a href="/news/article-39316.htm" title="无货源网店怎么找商家合作是真的吗（无货源网店怎么操作）">无货源网店怎么找商家合作是真的吗（无货源网店怎么操作）</a></li>
+                        <li class="py-2"><a href="/news/article-36865.htm" title="Redux基础必知必会 reducer拆分 中间件 单向数据流">Redux基础必知必会 reducer拆分 中间件 单向数据流</a></li>
+                        <li class="py-2"><a href="/news/article-25052.htm" title="十大动物疫苗公司有哪些品牌名称（动物疫苗厂家有哪些）">十大动物疫苗公司有哪些品牌名称（动物疫苗厂家有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-33985.htm" title="领养宠物用不用钱（领养宠物要给红包吗）">领养宠物用不用钱（领养宠物要给红包吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">67</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
