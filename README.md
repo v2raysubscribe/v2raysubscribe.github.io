@@ -1,4 +1,4 @@
-# 1月31日→20.4M/S|免费节点Clash/V2ray/SSR/Shadowrocket2025年最新订阅链接地址  更新时间 2025-01-31 07:21:43
+# 2月5日→19.8M/S|免费节点V2ray/Clash/SSR/Shadowrocket2025年最新订阅链接地址  更新时间 2025-02-05 08:24:02
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://v2raysubscribe.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://v2raysubscribe.github.io/uploads/2025/01/0-20250131.yaml
-- https://v2raysubscribe.github.io/uploads/2025/01/1-20250131.yaml
-- https://v2raysubscribe.github.io/uploads/2025/01/2-20250131.yaml
-- https://v2raysubscribe.github.io/uploads/2025/01/3-20250131.yaml
-- https://v2raysubscribe.github.io/uploads/2025/01/4-20250131.yaml
+- https://v2raysubscribe.github.io/uploads/2025/02/0-20250205.yaml
+- https://v2raysubscribe.github.io/uploads/2025/02/1-20250205.yaml
+- https://v2raysubscribe.github.io/uploads/2025/02/2-20250205.yaml
+- https://v2raysubscribe.github.io/uploads/2025/02/3-20250205.yaml
+- https://v2raysubscribe.github.io/uploads/2025/02/4-20250205.yaml
 
 ### V2ray订阅链接
 
-- https://v2raysubscribe.github.io/uploads/2025/01/0-20250131.txt
-- https://v2raysubscribe.github.io/uploads/2025/01/1-20250131.txt
-- https://v2raysubscribe.github.io/uploads/2025/01/2-20250131.txt
-- https://v2raysubscribe.github.io/uploads/2025/01/3-20250131.txt
-- https://v2raysubscribe.github.io/uploads/2025/01/4-20250131.txt
+- https://v2raysubscribe.github.io/uploads/2025/02/0-20250205.txt
+- https://v2raysubscribe.github.io/uploads/2025/02/1-20250205.txt
+- https://v2raysubscribe.github.io/uploads/2025/02/2-20250205.txt
+- https://v2raysubscribe.github.io/uploads/2025/02/3-20250205.txt
+- https://v2raysubscribe.github.io/uploads/2025/02/4-20250205.txt
 
 ### Sing-box订阅链接
 
-- https://v2raysubscribe.github.io/uploads/2025/01/20250131.json
+- https://v2raysubscribe.github.io/uploads/2025/02/20250205.json
 
 ## 更多clash节点订阅 ：
 
