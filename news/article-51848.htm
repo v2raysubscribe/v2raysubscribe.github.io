@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-51848.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>如何解决服务器网站高并发问题,大型网站如何解决高并发带来的问题</title>
+        <meta name="description" content="描述 大型网站，比如门户网站，在面对大量用户访问、高并发请求方面带来的问题 1.大并发：在同一个时间点，有大量的客户来访问我们的网站，如果访问量过大，就可能造成网站瘫痪。 2.大流量：当网站大后，有大" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray Subscribe免费梯子节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2raysubscribe.github.io/news/article-51848.htm" />
+    <meta property="og:site_name" content="V2ray Subscribe免费梯子节点分享官网" />
+    <meta property="og:title" content="如何解决服务器网站高并发问题,大型网站如何解决高并发带来的问题" />
+    <meta property="og:image" content="https://v2raysubscribe.github.io/uploads/20241210/ee09fa5544bfbb6ea4e6e1645b502136.webp" />
+        <meta property="og:release_date" content="2025-02-06T05:27:55" />
+    <meta property="og:updated_time" content="2025-02-06T05:27:55" />
+        <meta property="og:description" content="描述 大型网站，比如门户网站，在面对大量用户访问、高并发请求方面带来的问题 1.大并发：在同一个时间点，有大量的客户来访问我们的网站，如果访问量过大，就可能造成网站瘫痪。 2.大流量：当网站大后，有大" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="如何解决服务器网站高并发问题,大型网站如何解决高并发带来的问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://oss.maxcdn.com">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                                <li><a href="#">关于</a></li>
+                        <li><a href="#">联系</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>如何解决服务器网站高并发问题,大型网站如何解决高并发带来的问题</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>描述</p> <p>大型网站，比如门户网站，在面对大量用户访问、高并发请求方面带来的问题</p> <p>1.大并发：在同一个时间点，有大量的客户来访问我们的网站，如果访问量过大，就可能造成网站瘫痪。</p> <p>2.大流量：当网站大后，有大量的图片，视频, 这样就会对流量要求高，需要更多更大的带宽。</p> <p>3.大存储：你的数据量会成海量的数据，如果我们的数据放入一张表，是无法应对的。可能对数据保存和查询出现问题。</p> <p>基本的解决方案集中在这样几个环节：使用高性能的服务器、高性能的数据库、高效率的编程语言、还有高性能的Web容器，(对架构分层+负载均衡+集群)这几个解决思路在一定程度上意味着更大的投入。</p> <p>解决方案：</p> <p>一、提高硬件能力、增加系统服务器。(当服务器增加到某个程度的时候系统所能提供的并发访问量几乎不变，所以不能根本解决问题)</p> <p align="center"><img decoding="async" src="http://img.555519.xyz/uploads/20221230/777d83388bd626c5d26b210aa6f1fb28.jpg" alt="如何解决服务器网站高并发问题,大型网站如何解决高并发带来的问题"></p> <p>二、使用缓存(本地缓存：本地可以使用JDK自带的 Map、Guava Cache.分布式缓存：Redis、Memcache.本地缓存不适用于提高系统并发量，一般是用处用在程序中。比如Spring是如何实现单例的呢？大家如果看过源码的话，应该知道，Spiring把已经初始过的变量放在一个Map中，下次再要使用这个变量的时候，先判断Map中有没有，这也就是系统中常见的单例模式的实现。)</p> <p>分布式缓存利器Redis集群，Redis集群的搭建至少需要三主三从。</p> <p>1. 所有的redis节点彼此互联(PING-PONG机制),内部使用二进制协议优化传输速度和带宽。</p> <p>2. 节点的fail是通过集群中超过半数的节点检测失效时才生效(所以一个集群中至少要有三个节点)。</p> <p>3. 客户端与redis节点直连,不需要中间proxy层.客户端不需要连接集群所有节点,连接集群中任何一个可用节点即可。</p> <p>4. 集群中每一个节点都存放不同的内容，每一个节点都应有备份机。</p> <p>5. redis-cluster把所有的物理节点映射到[0-16383]slot上,cluster 负责维护nodeslotvalue</p> <p>Redis 集群中内置了16384 个哈希槽，当需要在Redis 集群中放置一个key-value 时，redis先对 key 使用 crc16 算法算出一个结果，然后把结果对16384 求余数，这样每个key 都会对应一个编号在0-16383 之间的哈希槽，redis会根据节点数量大致均等的将哈希槽映射到不同的节点。</p> <p>三 、消息队列 (解耦+削峰+异步)通过异步处理提高系统性能，降低系统耦合性</p> <p>在不使用消息队列服务器的时候，用户的请求数据直接写入数据库，在高并发的情况下数据库压力剧增，使得响应速度变慢。但是在使用消息队列之后，用户的请求数据发送给消息队列之后立即 返回，再由消息队列的消费者进程从消息队列中获取数据，异步写入数据库。由于消息队列服务器处理速度快于数据库(消息队列也比数据库有更好的伸缩性)，因此响应速度得到大幅改善。</p> <p>通过使用消息中间件对Dubbo服务间的调用进行解耦, 消息中间件可利用高效可靠的消息传递机制进行平台无关的数据交流，并基于数据通信来进行分布式系统的集成。通过提供消息传递和消息排队模型，可以在分布式环境下扩展进程间的通信。通过消息中间件，应用程序或组件之间可以进行可靠的异步通讯，从而降低系统之间的耦合度，提高系统的可扩展性和可用性。</p> <p>四 、采用分布式开发 (不同的服务部署在不同的机器节点上，并且一个服务也可以部署在多台机器上，然后利用 Nginx 负载均衡访问。这样就解决了单点部署(All In)的缺点，大大提高的系统并发量)</p> <p>五 、数据库分库(读写分离)、分表(水平分表、垂直分表)</p> <p>这种的集群在遇到单表数据量超过2000万的时候，mysql性能会受损，所以一个集群还不够，我们需要把数据分到另一个集群，这个称为“切片”，就是把大量的数据拆分到不同的集群中，每个集群的数据都是不一样的，通过MyCat这个阿里巴巴的开源中间件，可以把sql分到不同的集群里面去。</p> <p>PXC集群方案所有节点都是可读可写的，Replication从节点不能写入，因为主从同步是单向的，无法从slave节点向master点同步。PXC同步机制是同步进行的，这也是它能保证数据强一致性的根本原因，Replication同步机制是异步进行的，它如果从节点停止同步，依然可以向主节点插入数据，正确返回，造成数据主从数据的不一致性。</p> <p>PXC是用牺牲性能保证数据的一致性，Replication在性能上是高于PXC的。所以两者用途也不一致。PXC是用于重要信息的存储，例如：订单、用户信息等。Replication用于一般信息的存储，能够容忍数据丢失，例如：购物车，用户行为日志等。</p> <p align="center"><img decoding="async" src="http://img.555519.xyz/uploads/20221230/59dffe4b316d603ad8f9e1b6315bd8a1.jpg" alt="如何解决服务器网站高并发问题,大型网站如何解决高并发带来的问题"></p> <p>六、 采用集群 (多台机器提供相同的服务)系统架构方案</p> <p>七、CDN 加速 (将一些静态资源比如图片、视频等等缓存到离用户最近的网络节点)</p> <p>八、浏览器缓存 页面静态化(使用php自己的ob缓存技术实现， 主流的mvc框架(tp,yii,laravel)模板引擎一般都自带页面静态化 )</p> <p>九、使用合适的连接池(数据库连接池、线程池等等)</p> <p>十、适当使用多线程进行开发。</p> <p>十一、使用镜像</p> <p>镜像是大型网站常采用的提高性能和数据安全性的方式，镜像的技术可以解决不同网络接入商和地域带来的用户访问速度差异，比如ChinaNet和EduNet之间的差异就促使了很多网站在教育网内搭建镜像站点，数据进行定时更新或者实时更新。有很多专业的现成的解决架构和产品可选。也有廉价的通过软件实现的思路，比如Linux上的rsync等工具。</p> <p>十二、图片服务器分离</p> <p>大家知道，对于Web服务器来说，不管是Apache、IIS还是其他容器，图片是最消耗资源的，于是我们有必要将图片与页面进行分离，这是基本上大型网站都会采用的策略，他们都有独立的、甚至很多台的图片服务器。这样的架构可以降低提供页面访问请求的服务器系统压力，并且可以保证系统不会因为图片问题而崩溃。在应用服务器和图片服务器上，可以进行不同的配置优化，比如apache在配置ContentType的时候可以尽量少支持、尽可能少的LoadModule，保证更高的系统消耗和执行效率。</p> <p>打开APP阅读更多精彩内容</p> <p>点击阅读全文</p> </div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-51335.htm">同城免费领养宠物诈骗电话 同城免费领养宠物诈骗电话号码</a></p>
+                                        <p>下一个：<a href="/news/article-51849.htm">厦门同安宠物店（同安的宠物店）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-8-node-share-links.htm" title="2月8日→22.9M/S|免费节点SSR/Shadowrocket/V2ray/Clash2025年最新订阅链接地址">2月8日→22.9M/S|免费节点SSR/Shadowrocket/V2ray/Clash2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26451.htm" title="动物医院名字有创意两个字的吗英文翻译（动物医院 英文）">动物医院名字有创意两个字的吗英文翻译（动物医院 英文）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-free-subscribe-node.htm" title="12月29日→22.5M/S|2024年最新免费节点V2ray Subscribe订阅链接地址">12月29日→22.5M/S|2024年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25977.htm" title="长期上门收购各种宠物犬株洲（株洲哪里有收狗的）">长期上门收购各种宠物犬株洲（株洲哪里有收狗的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-free-node-subscribe.htm" title="1月11日→19.3M/S|免费节点SSR/Clash/V2ray/Shadowrocket2025年最新订阅链接地址">1月11日→19.3M/S|免费节点SSR/Clash/V2ray/Shadowrocket2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-free-node-subscribe-links.htm" title="1月26日→18.9M/S|免费节点V2ray/Clash/SSR/Shadowrocket2025年最新订阅链接地址">1月26日→18.9M/S|免费节点V2ray/Clash/SSR/Shadowrocket2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-node-share.htm" title="2月5日→18.5M/S|免费节点V2ray/Clash/SSR/Shadowrocket2025年最新订阅链接地址">2月5日→18.5M/S|免费节点V2ray/Clash/SSR/Shadowrocket2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-42789.htm" title="Python调用C++程序的几种方法">Python调用C++程序的几种方法</a></li>
+                        <li class="py-2"><a href="/news/article-33030.htm" title="宠物狗送养是什么意思（送养的狗有权力要回来吗）">宠物狗送养是什么意思（送养的狗有权力要回来吗）</a></li>
+                        <li class="py-2"><a href="/news/article-49753.htm" title="女人养猫的十大坏处视频大全（女人养猫的十大坏处视频大全图片）">女人养猫的十大坏处视频大全（女人养猫的十大坏处视频大全图片）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">67</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
