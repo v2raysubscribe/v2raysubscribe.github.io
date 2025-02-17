@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-56759.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>json字符串转java实体类及属性对应中的猫腻详解</title>
+        <meta name="description" content="一、json强转实体类 1.实体类  package test;  public class PassPortForLendsEntity { 	private String passportid; " />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray Subscribe免费梯子节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2raysubscribe.github.io/news/article-56759.htm" />
+    <meta property="og:site_name" content="V2ray Subscribe免费梯子节点分享官网" />
+    <meta property="og:title" content="json字符串转java实体类及属性对应中的猫腻详解" />
+    <meta property="og:image" content="https://v2raysubscribe.github.io/uploads/20241210/c41639d317274b549e30468583bb8b13.webp" />
+        <meta property="og:release_date" content="2025-02-15T05:20:59" />
+    <meta property="og:updated_time" content="2025-02-15T05:20:59" />
+        <meta property="og:description" content="一、json强转实体类 1.实体类  package test;  public class PassPortForLendsEntity { 	private String passportid; " />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="json字符串转java实体类及属性对应中的猫腻详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://oss.maxcdn.com">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/client.htm">客户端</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>json字符串转java实体类及属性对应中的猫腻详解</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong><span style="font-size:24px">一、json强转实体类</span></strong></p> <p><span style="font-size:18px">1.实体类</span></p> <p><span style="font-size:18px"></span></p> <pre><code class="language-java">package test;  public class PassPortForLendsEntity { 	private String passportid; 	private String name; 	private String xx; 	private String ss; 	public String getPassportid() { 		return passportid; 	} 	public void setPassportid(String passportid) { 		this.passportid = passportid; 	} 	public String getName() { 		return name; 	} 	public void setName(String name) { 		this.name = name; 	} 	public String getPassporttype1() { 		return xx; 	} 	public void setPassporttype1(String passporttype) { 		this.xx = passporttype; 	} 	public String getXx() { 		return xx; 	} 	public void setXx(String xx) { 		this.xx = xx; 	} 	public String getSs() { 		return ss; 	} 	public void setSs(String ss) { 		this.ss = ss; 	} 	 } </code></pre> <p><span style="font-size:18px">2.测试类</span></p> <p><span style="font-size:18px"></span></p> <pre><code class="language-java">package test;  import java.util.ArrayList; import java.util.List;  import com.alibaba.fastjson.JSON; import com.alibaba.fastjson.JSONArray; import com.alibaba.fastjson.JSONObject;  public class json2entity1 { 	public static void main(String[] args) { 	String	str ="{\"lendperson\":\"李四\",\"lendcompany\":\"有限公司\",\"checkperson\":\"李四\"," 				+ "\"lenddate\":\"2010-07-19T00:00:00\",\"lendcounts\":4,\""  				+"passports\":[{\"passportid\":\"d\",\"name\":\"李豫川\",\"passporttype\":\"K\"},"  				+"{\"passportid\":\"K9051\",\"name\":\"李平\",\"passporttype\":\"K\",\"age\":\"23\"},"  				+"{\"passportid\":\"K90517\",\"name\":\"袁寒梅\",\"passporttype\":\"K\"},"  				+"{\"passportid\":\"K905199\",\"name\":\"贺明\",\"passporttype1\":\"K\"}]}";  				JSONObject jsonobject = JSON.parseObject(str);//此处是com.alibaba.fastjson 				//若是net.sf.json，则用JSONObjectjsonobject = JSONObject.fromObject(str);  				try {  				//获取一个json数组  				JSONArray array = jsonobject.getJSONArray("passports");  				//将json数组 转换成List&lt;PassPortForLendsEntity&gt;泛型  				List&lt;PassPortForLendsEntity&gt; list = new ArrayList&lt;PassPortForLendsEntity&gt;();  				for (int i =0; i &lt; array.size(); i++){  				JSONObject object =(JSONObject)array.get(i);  				PassPortForLendsEntity passport =(PassPortForLendsEntity)JSONObject.toJavaObject(object, 				PassPortForLendsEntity.class);//此处是com.alibaba.fastjson 				//若是net.sf.json 则用(PassportLendsEntity)JSONObject.toBean(jsonobject, PassportLendsEntity.class);  				if(passport != null){  				list.add(passport);  				}  				} 				System.out.println(list); 	}catch(Exception e){ 		e.printStackTrace(); 	} } }</code></pre> <p><span style="font-size:18px"><br /> 注意：json字符串str中要转为实体类的是passports的值，里面有三个属性值：passportid，name，passporttype.</span></p> <p><span style="font-size:18px">与之对应的实体类PassPortForLendsEntity至少有这三个属性（属性可以多于这三个）。</span></p> <p><span style="font-size:18px; color:#3333ff">开始划重点了！</span></p> <p><span style="font-size:18px; background-color:rgb(255,255,255)"><span style="font-weight:bold"><span style="color:#ff0000">1.<span style="font-size:18px">实体类</span><span style="font-size:18px">PassPortForLendsEntity至少包含被转为实体类的字符串<span style="font-size:18px">passports</span>的所有属性，可以有多于<span style="font-size:18px">passports</span>中的属性，多的属性在转的时候为null；</span></span></span></span></p> <p><span style="font-size:18px"><span style="font-size:18px; background-color:rgb(255,255,255)"><span style="font-weight:bold"><span style="color:#ff0000">2.当</span><span style="font-size:18px"><span style="color:#ff0000">passports中有实体类<span style="font-size:18px">PassPortForLendsEntity没有的属性，在转实体类的时候会被忽略，不会报错，能转成功；</span></span></span></span></span></span></p> <p><span style="font-size:18px"><span style="font-size:18px; background-color:rgb(255,255,255)"><span style="font-size:18px"><span style="font-size:18px"><span style="color:#ff0000"><strong>3.</strong></span><span style="font-size:18px"><span style="color:#ff0000"><strong>passports与<span style="font-size:18px">PassPortForLendsEntity</span>属性对应法则（严格大小写）：在<span style="font-size:18px">PassPortForLendsEntity中能找到</span></strong></span><span style="font-size:18px"><span style="color:#ff0000"><strong>passports属性首字母大写的get和set方法并且属性名中的其他字母大小写严格一致，而不是</strong></span><span style="font-size:18px"><span style="color:#ff0000"><strong>passports与</strong></span><span style="font-size:18px"><span style="color:#ff0000"><strong>PassPortForLendsEntity属性名必须相同！</strong></span><strong>（这点很重要）实际上只要满足</strong><span style="font-size:18px"><strong>PassPortForLendsEntity中有</strong><span style="font-size:18px"><strong>passports属性名首字母大写的get和set方法</strong><span style="font-size:18px"><strong>并且属性名中的其他字母大小写严格一致</strong></span><strong>，即使二者之间属性名差异很大也能对应上。</strong>如<span style="font-size:18px">PassPortForLendsEntity中的属性xx对应<span style="font-size:18px">passports中的属性<span style="font-size:18px">passporttype。</span></span></span></span></span></span></span></span></span></span></span></span></span></p> <p><span style="font-size:18px"><span style="font-size:18px; background-color:rgb(255,255,255)"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px">如：get<span style="font-size:18px">Passporttype()和<span style="font-size:18px">setPassporttype()只能使<span style="font-size:18px">passports中是</span><span style="font-size:18px">passporttype</span>属性对应上<span style="font-size:18px">PassPortForLendsEntity对应的属性</span>，但是<span style="font-size:18px">getPassportType()和setPassportType()就不行（但是这个可使<span style="font-size:18px">passports中是passportType属性对应上PassPortForLendsEntity对应的属性</span>）。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p> <p><span style="font-size:18px"><span style="font-size:18px; background-color:rgb(255,255,255)"><span style="font-weight:bold"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="color:#ff0000">4.<span style="font-size:18px">PassPortForLendsEntity中允许在get和set方法中多次对同一属性名，但是实际能获得值的依然是能匹配上对应关系的属性值，并且不会被覆盖。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p> <p><span style="font-size:18px"><span style="font-size:18px; background-color:rgb(255,255,255)"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px"><span style="font-size:18px">如：<span style="font-size:18px">PassPortForLendsEntity中setPassporttype1()和setXx()都对xx属性设值，但是由于只有<span style="font-size:18px">setPassporttype1()能匹配上<span style="font-size:18px">passports中最后一条数据才能设值，即使此时<span style="font-size:18px">setXx()会使xx属性值为null，最终起作用的还是<span style="font-size:18px">setPassporttype1()。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p> <p><span style="font-size:18px; color:#ff0000"><span style="font-size:18px; background-color:rgb(255,255,255)"><span style="font-weight:bold"><span style="font-size:18px"><span style="color:rgb(255,0,0); font-size:18px"><span style="color:rgb(255,0,0); font-size:18px"><span style="color:rgb(255,0,0); font-size:18px"><span style="color:rgb(255,0,0); font-size:18px"><span style="color:rgb(255,0,0); font-size:18px">重点：json字符串转java实体类只看java实体类中有没有对应的set和get方法，而不是看有没有对应（相同）的属性名。对应上了就能向实体类映射成功。</span></span></span></span></span></span></span></span></span></p> <p><span style="font-size:14px">更多参考：https://wenku.baidu.com/view/5e6e43e102020740bf1e9b29.html</span></p> <p><span style="font-size:18px"><br /></span></p> <p><span style="font-size:18px">此方法虽方便，自动化程度高，但也有个弊端就是：这个接口推来的json数据的格式和实体类的get和set要约定好一一对应。但在需求经常变更的情况下，反复修改实体类以求对应上（这也会附带影响到其他的业务逻辑），也是够累的。因为二者之间耦合性太高了。有没有一种方法松耦合，使相互直接影响不那么强。方法二来了。</span></p> <p><span style="font-size:18px"><strong><br /></strong></span></p> <p><strong><span style="font-size:24px">二、松耦合，逐个属性设值</span></strong></p> <p><span style="font-size:18px">不管推到接口的json要转实体类的属性名怎么变化，由我来决定往java实体类的哪个属性里放。也就是，即使你变，也不影响我的正常使用，我也不影响你。</span></p> <p><span style="font-size:18px"></span></p> <pre><code class="language-java">package test;  import java.util.ArrayList; import java.util.List;  import com.alibaba.fastjson.JSON; import com.alibaba.fastjson.JSONArray; import com.alibaba.fastjson.JSONObject;  public class json2entity2 { 	public static void main(String[] args) { 		String str = "{\"lendperson\":\"李四\",\"lendcompany\":\"有限公司\",\"checkperson\":\"李四\"," 				+ "\"lenddate\":\"2010-07-19T00:00:00\",\"lendcounts\":4,\""  				+ "passports\":[{\"passportid\":\"d\",\"name\":\"李豫川\",\"passporttype\":\"K\"},"  				+ "{\"passportid\":\"K9051\",\"name\":\"李平\",\"passporttype\":\"K\",\"age\":\"23\"},"  				+ "{\"passportid\":\"K90517\",\"name\":\"袁寒梅\",\"passporttype\":\"K\"},"  				+ "{\"passportid\":\"K905199\",\"name\":\"贺明\",\"passporttype1\":\"K\"}]}";  		JSONObject jsonobject = JSON.parseObject(str);// 此处是com.alibaba.fastjson 		// 若是net.sf.json，则用JSONObjectjsonobject = JSONObject.fromObject(str);  		try {  			// 获取一个json数组  			JSONArray array = jsonobject.getJSONArray("passports");  			// 将json数组 转换成List&lt;PassPortForLendsEntity&gt;泛型  			List&lt;PassPortForLendsEntity&gt; list = new ArrayList&lt;PassPortForLendsEntity&gt;();  			for (int i = 0; i &lt; array.size(); i++) {  				JSONObject object = (JSONObject) array.get(i); 				PassPortForLendsEntity passport = new PassPortForLendsEntity(); 				passport.setPassportid(object.getString("passportid")); 				passport.setName(object.getString("name")); 				passport.setPassporttype1(object.getString("passporttype1")); 				 if(passport != null){ 				 list.add(passport); 				 }  			} 			System.out.println(list); 		} catch (Exception e) { 			e.printStackTrace(); 		} 	} }</code></pre> <p> 方法二比较小心翼翼，逐个设值，你可以有机会选择往哪个属性里设值，不像方法一一下全自动设值了。但也相对于方法一更麻烦，当属性多的时候这个弊端就凸显了。</p> <p><span style="font-size:18px">综述：选择哪个方法，根据你实际需求来定。</span></p> <p><span style="font-size:18px">如果你的开发文档已经定型，json格式只会小改，推荐方法一；</span></p> <p><span style="font-size:18px">如果开发文档还在成型中，预测到会有不小的改动，为避免<span style="font-size:18px">浪费时间</span>影响开发进度，建议方法二，如果实体类属性值较多的话，你就要权衡是用方法一还是方法二；</span></p> <p><span style="font-size:18px">如果属性不多，又要松耦合的话可以考虑方法二。</span></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-56758.htm">Java中的append方法是什么？</a></p>
+                                        <p>下一个：<a href="/news/article-57319.htm">Java 树形结构数据生成导出excel文件</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-free-high-speed-nodes.htm" title="1月4日→20.4M/S|2025年最新免费节点V2ray Subscribe订阅链接地址">1月4日→20.4M/S|2025年最新免费节点V2ray Subscribe订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-44280.htm" title="成都宠物领养平台正规吗现在多少钱一个的简单介绍">成都宠物领养平台正规吗现在多少钱一个的简单介绍</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-free-node-subscribe-links.htm" title="1月30日→21.4M/S|免费节点Clash/V2ray/Shadowrocket/SSR2025年最新订阅链接地址">1月30日→21.4M/S|免费节点Clash/V2ray/Shadowrocket/SSR2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-38331.htm" title="动物防疫疫苗的运输规定有哪些内容和要求（动物疫苗运输与储存规范）">动物防疫疫苗的运输规定有哪些内容和要求（动物疫苗运输与储存规范）</a></li>
+                        <li class="py-2"><a href="/news/article-27838.htm" title="动物防疫工作内容（动物防疫工作要求）">动物防疫工作内容（动物防疫工作要求）</a></li>
+                        <li class="py-2"><a href="/news/article-47237.htm" title="怀孕让猫抓破了会影响孩子吗（怀孕让猫挠了怎么办）">怀孕让猫抓破了会影响孩子吗（怀孕让猫挠了怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-39811.htm" title="为什么代码规范要求SQL语句不要过多的join？">为什么代码规范要求SQL语句不要过多的join？</a></li>
+                        <li class="py-2"><a href="/news/article-35808.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
+                        <li class="py-2"><a href="/news/article-46754.htm" title="Java的引用和内存">Java的引用和内存</a></li>
+                        <li class="py-2"><a href="/news/article-24078.htm" title="猫咪领养协议免费模板下载大全（猫咪领养协议怎么写）">猫咪领养协议免费模板下载大全（猫咪领养协议怎么写）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">67</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
