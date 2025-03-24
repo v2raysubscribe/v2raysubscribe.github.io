@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-78774.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JRebel热部署的使用</title>
+        <meta name="description" content="JreBel：实现了不需要重启服务器达到热部署项目效果，它会对你当前所编辑过的页面进行编译，大幅度减少了重启服务器所带来的等待时间。 注意事项： c盘下的用户名一定不能为中文名称，否则会一直提示路径错" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray Subscribe免费梯子节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2raysubscribe.github.io/news/article-78774.htm" />
+    <meta property="og:site_name" content="V2ray Subscribe免费梯子节点分享官网" />
+    <meta property="og:title" content="JRebel热部署的使用" />
+    <meta property="og:image" content="https://v2raysubscribe.github.io/uploads/20241210/a1d2d2e17a1dfa19d4fffe3335a04e22.webp" />
+        <meta property="og:release_date" content="2025-03-22T08:45:58" />
+    <meta property="og:updated_time" content="2025-03-22T08:45:58" />
+        <meta property="og:description" content="JreBel：实现了不需要重启服务器达到热部署项目效果，它会对你当前所编辑过的页面进行编译，大幅度减少了重启服务器所带来的等待时间。 注意事项： c盘下的用户名一定不能为中文名称，否则会一直提示路径错" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JRebel热部署的使用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://oss.maxcdn.com">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/client.htm">客户端</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>JRebel热部署的使用</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p>JreBel：实现了不需要重启服务器达到热部署项目效果，它会对你当前所编辑过的页面进行编译，大幅度减少了重启服务器所带来的等待时间。</p> <p><strong>注意事项：</strong><br /> c盘下的用户名一定不能为中文名称，否则会一直提示路径错误，<strong>目前测试全部失败，以后的同学们安装可以试一试，如果成功了就留个言</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/95598d9ccf7d8d965d728d5a54481845.jpg" alt="JRebel热部署的使用"></p> <h3><a id="10jrebel_8" rel="nofollow"></a>1.0安装jrebel插件</h3> <p>File–》Settings—》plugins----》marketplace----》搜索jrebel<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/46e4f082adb953eb6b5bc8d285c01031.jpg" alt="JRebel热部署的使用"></p> <h3><a id="11idea_11" rel="nofollow"></a>1.1安装成功后会重启idea，出现下面的图片</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/ae2264a4c6662285b3cf4839b9e7de88.jpg" alt="JRebel热部署的使用"></p> <h3><a id="12jrebel_16" rel="nofollow"></a>1.2配置jrebel插件</h3> <hr/> <h2><a id="2jrebel_19" rel="nofollow"></a>2.激活jrebel</h2> <h3><a id="21GUID_20" rel="nofollow"></a>2.1：先获取GUID</h3> <p>在线生成GUID地址 （<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.guidgen.com/"  rel="nofollow"><strong>https://www.guidgen.com/</strong></a>）， PS：如果失效刷新GUID替换就可以！</p> <pre class="prettyprint"><code class="prism language-html has-numbering">输入url：https://jrebel.qekang.com/GUID(其中的GUID是2.1生成的，邮箱自己随意填写)</code><div class="hljs-button {2}"></div></pre> <ul class="pre-numbering"> <li>1</li> </ul> <hr/> <p>之前点击蓝色字体会出现这个窗口，将上面获取到的GUID根据图片提示输入进去<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/6c115f3de49dfae1fee416c750bee667.jpg" alt="JRebel热部署的使用"></p> <p>如果没有出现下面提示，请确定自己的网络通畅，然后再次点击激活，如果还不行，更改guid<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/8a100f4d27981b62e2dd17c91fb89667.jpg" alt="JRebel热部署的使用"></p> <ul> <li>继续点击我同意【I agree】</li> </ul> <h2><a id="3JRebel__36" rel="nofollow"></a>3、JRebel 配置</h2> <h3><a id="31__38" rel="nofollow"></a>3、1 将工作模式改成离线工作，！！！！</h3> <p>不修改成离线工作，你的jrebel会一直报错，当然某些小伙伴的是没有问题<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/96197e33657d80ca6299ed2ab312cb5a.jpg" alt="JRebel热部署的使用"></p> <ul> <li>你的右上角会有两个绿色的小图标，这个就是jrebel启动</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/1e0b3f1efde2b1ba36e0e6823ce8edc4.jpg" alt="JRebel热部署的使用"></p> <hr/> </h1> <h3><a id="41__47" rel="nofollow"></a>4、1 进行项目热部署</h3> <ul> <li>左下角有一个JreBel，点击在打开的窗口，选择你所需要进行热部署的项目。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/764496ce0b03eb68f12b4b7aaac8e3ff.jpg" alt="JRebel热部署的使用"><br /> 勾选后会生成一个rebel.xml文件，此文件可以忽略</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/078b65cd58992243be63c1039a59d24f.jpg" alt="JRebel热部署的使用"></p> <h3><a id="43__ctrlf9_53" rel="nofollow"></a>4、3 更改后使用ctrl+f9实现不重启服务器部署项目</h3> <ul> <li>或者点击小锤子也是<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/bdea0b905bdeaf067e375426b68a4615.jpg" alt="JRebel热部署的使用"></li> </ul> <h3><a id="44__57" rel="nofollow"></a>4、4 录制快捷键</h3> <ul> <li> <p>原有的保存操作不方便一只手操作，设置新的快捷键方便操作<br /> -edit—&gt;macros—&gt;start macro recording<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/167b6552da8e9f5585c1ba82d4baa890.jpg" alt="JRebel热部署的使用"></p> </li> <li> <p>右下角会出现一个提示<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/eddba3ac1a0acfebcbde782ee481a12b.jpg" alt="JRebel热部署的使用"></p> </li> <li> <p>然后点击ctrl+F9，此时右下角会有提示，点击红色停止<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/4d9a5a06afcb0ef0580fe66de60c278b.jpg" alt="JRebel热部署的使用"></p> </li> <li> <p>会弹出一个窗口，在窗口中输入build</p> </li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/fcf91f1e349ea80140141faa05d5b73e.jpg" alt="JRebel热部署的使用"></p> <ul> <li>打开设置，找到kaymap</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/82aa5b5a9ff46c7b52460a04a3fd63e8.jpg" alt="JRebel热部署的使用"></p> <ul> <li>右击选择第一个，在弹出的窗口输入你想使用的快捷键，<code>ctrl+s</code> 已经被使用，建议使用<code>alt+z</code>或者<code>alt+s</code></li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/174e9d54778cf3fbc2a62ed79460a001.jpg" alt="JRebel热部署的使用"></p> <h2><a id="_81" rel="nofollow"></a>警告！！！</h2> <p><font color="red">JreBel不适用于resources包下面的文件，修改此包下面的必须重启，否则不生效。</font></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-78084.htm">女人养猫的十大好处和坏处图片（女人养猫会怎么样）</a></p>
+                                        <p>下一个：<a href="/news/article-78775.htm">一文搞定CompletableFuture并行处理，成倍缩短查询时间。</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-49753.htm" title="女人养猫的十大坏处视频大全（女人养猫的十大坏处视频大全图片）">女人养猫的十大坏处视频大全（女人养猫的十大坏处视频大全图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-free-subscribe-node.htm" title="3月7日→18.4M/S|免费节点V2ray/Clash/Shadowrocket/SSR2025年最新订阅链接地址">3月7日→18.4M/S|免费节点V2ray/Clash/Shadowrocket/SSR2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-39810.htm" title="java利用RestTemplate 发送post请求">java利用RestTemplate 发送post请求</a></li>
+                        <li class="py-2"><a href="/news/article-72682.htm" title="领养和送的区别（送养与领养怎么走程序）">领养和送的区别（送养与领养怎么走程序）</a></li>
+                        <li class="py-2"><a href="/news/article-47237.htm" title="怀孕让猫抓破了会影响孩子吗（怀孕让猫挠了怎么办）">怀孕让猫抓破了会影响孩子吗（怀孕让猫挠了怎么办）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-free-node-subscribe.htm" title="1月11日→19.3M/S|免费节点SSR/Clash/V2ray/Shadowrocket2025年最新订阅链接地址">1月11日→19.3M/S|免费节点SSR/Clash/V2ray/Shadowrocket2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-44280.htm" title="成都宠物领养平台正规吗现在多少钱一个的简单介绍">成都宠物领养平台正规吗现在多少钱一个的简单介绍</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-node-share-links.htm" title="1月18日→19.5M/S|免费节点Shadowrocket/V2ray/SSR/Clash2025年最新订阅链接地址">1月18日→19.5M/S|免费节点Shadowrocket/V2ray/SSR/Clash2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-node-share-links.htm" title="1月7日→19.9M/S|免费节点SSR/V2ray/Shadowrocket/Clash2025年最新订阅链接地址">1月7日→19.9M/S|免费节点SSR/V2ray/Shadowrocket/Clash2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-node-subscribe.htm" title="2月22日→21.4M/S|免费节点SSR/Clash/Shadowrocket/V2ray2025年最新订阅链接地址">2月22日→21.4M/S|免费节点SSR/Clash/Shadowrocket/V2ray2025年最新订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-78775.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>一文搞定CompletableFuture并行处理，成倍缩短查询时间。</title>
+        <meta name="description" content="前言    工作中你可能会遇到很多这样的场景，一个接口，要从其他几个service调用查询方法，分别获取到需要的值之后再封装数据返回。   还可能在微服务中遇到类似的情况，某个服务的接口，要使用好几次" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray Subscribe免费梯子节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2raysubscribe.github.io/news/article-78775.htm" />
+    <meta property="og:site_name" content="V2ray Subscribe免费梯子节点分享官网" />
+    <meta property="og:title" content="一文搞定CompletableFuture并行处理，成倍缩短查询时间。" />
+    <meta property="og:image" content="https://v2raysubscribe.github.io/uploads/20241210/bee850a451a58a41feb235bce091be6a.webp" />
+        <meta property="og:release_date" content="2025-03-22T08:45:58" />
+    <meta property="og:updated_time" content="2025-03-22T08:45:58" />
+        <meta property="og:description" content="前言    工作中你可能会遇到很多这样的场景，一个接口，要从其他几个service调用查询方法，分别获取到需要的值之后再封装数据返回。   还可能在微服务中遇到类似的情况，某个服务的接口，要使用好几次" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="一文搞定CompletableFuture并行处理，成倍缩短查询时间。">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://oss.maxcdn.com">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/client.htm">客户端</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>一文搞定CompletableFuture并行处理，成倍缩短查询时间。</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<h3 id="前言">前言</h3> <blockquote> <p>  工作中你可能会遇到很多这样的场景，一个接口，要从其他几个service调用查询方法，分别获取到需要的值之后再封装数据返回。</p> <p>  还可能在微服务中遇到类似的情况，某个服务的接口，要使用好几次feign去调用其他服务的方法获取数据，最后拿到想要的值并封装返回给前端。</p> <p>  这样的场景下，当某个或多个rpc调用的方法比较耗时，整个接口的响应就会非常慢。Java8之后，有一个工具非常适合处理这种场景，就是CompletableFuture。</p> </blockquote> <p></p> <h3 id="场景">场景</h3> <p>  本章主要讲解CompletableFuture的并行处理用法，来针对这种很常见的场景，帮助大家快速掌握并应用到实际工作当中。CompletableFuture内部的用法还有许多，但个人用到的场景大多都是并行处理，对其他场景感兴趣的小伙伴可以另行百度搜索。</p> <blockquote> <p>场景说明：</p> <p>写一个接口，调用另外两个HTTP接口，分别获取二十四节气和星座，最后放在一起返回。</p> </blockquote> <p></p> <h3 id="用法">用法</h3> <h4 id="1在线api">1、在线API</h4> <p>我们访问极速数据网站https://www.jisuapi.com ，注册一个账号，就可以免费使用里面的一些在线API，平均每天有100次免费机会，对于我这样经常本地做一些测试的人来说完全够用了。</p> <p>这里，我使用了其中的查询二十四节气API，和查询星座API，后面会提供案例代码，也可以直接使用我的。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/8b4920693d53f553379807c94690a988.jpg" alt="一文搞定CompletableFuture并行处理，成倍缩短查询时间。"></p> <p></p> <h4 id="2编写在线api查询">2、编写在线API查询</h4> <p>这里，我们在查询时，模拟耗时的情况。</p> <h5 id="1查询二十四节气">1）、查询二十四节气</h5> <pre><code class="language-java">package com.example.async.service;  import cn.hutool.http.HttpUtil; import lombok.extern.slf4j.Slf4j; import org.springframework.stereotype.Service;  /**  * &lt;p&gt;  * 查询二十四节气的服务  * &lt;/p&gt;  *  * @author 福隆苑居士，公众号：【Java分享客栈】  * @since 2022-04-26 15:25  */ @Service @Slf4j public class TwentyFourService {     public static final String APPKEY = "xxxxxx";// 你的appkey    public static final String URL = "https://api.jisuapi.com/jieqi/query";     public String getResult() {        String url = URL + "?appkey=" + APPKEY;        String result = HttpUtil.get(url);         // 模拟耗时        try {           TimeUnit.SECONDS.sleep(5);        } catch (Exception e) {           log.error("[二十四节气]&gt;&gt;&gt;&gt; 异常: {}", e.getMessage(), e);        }         return result;    }     }</code></pre> <h5 id="2查询星座">2）、查询星座</h5> <pre><code class="language-java">package com.example.async.service;  import cn.hutool.http.HttpUtil; import lombok.extern.slf4j.Slf4j; import org.springframework.stereotype.Service;  import java.util.concurrent.TimeUnit;  /**  * &lt;p&gt;  * 查询星座的服务  * &lt;/p&gt;  *  * @author 福隆苑居士，公众号：【Java分享客栈】  * @since 2022-04-26 15:25  */ @Service @Slf4j public class ConstellationService {    public static final String APPKEY = "xxxxxx";// 你的appkey    public static final String URL = "https://api.jisuapi.com/astro/all";     public String getResult() {        String url = URL + "?appkey=" + APPKEY;       String result = HttpUtil.get(url);        // 模拟耗时       try {          TimeUnit.SECONDS.sleep(5);       } catch (Exception e) {          log.error("[星座]&gt;&gt;&gt;&gt; 异常: {}", e.getMessage(), e);       }        return result;    }     }</code></pre> <p></p> <h4 id="3编写查询服务">3、编写查询服务</h4> <pre><code class="language-java">package com.example.async.service;  import lombok.extern.slf4j.Slf4j; import org.springframework.stereotype.Service;  import java.util.HashMap; import java.util.Map;  /**  * &lt;p&gt;  * 查询服务  * &lt;/p&gt;  *  * @author 福隆苑居士，公众号：【Java分享客栈】  * @since 2022-04-26 17:38  */ @Service @Slf4j public class QueryService {    private final TwentyFourService twentyFourService;    private final ConstellationService constellationService;     public QueryService(TwentyFourService twentyFourService, ConstellationService constellationService) {       this.twentyFourService = twentyFourService;       this.constellationService = constellationService;    }     /**     * 同步返回结果     * @return 结果     */    public Map&lt;String, Object&gt; query() {       // 1、查询二十四节气       String twentyFourResult = twentyFourService.getResult();        // 2、查询星座       String constellationResult = constellationService.getResult();        // 3、返回       Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();       map.put("twentyFourResult", twentyFourResult);       map.put("constellationResult", constellationResult);       return map;    } }</code></pre> <p></p> <h4 id="4编写测试接口">4、编写测试接口</h4> <blockquote> <p>这里，我们专门加上了耗时计算。</p> </blockquote> <pre><code class="language-java">package com.example.async.controller;  import cn.hutool.core.date.TimeInterval; import com.example.async.service.QueryService; import lombok.extern.slf4j.Slf4j; import org.springframework.http.ResponseEntity; import org.springframework.web.bind.annotation.GetMapping; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RestController;  import java.util.Map;  /**  * &lt;p&gt;  * 测试  * &lt;/p&gt;  *  * @author 福隆苑居士，公众号：【Java分享客栈】  * @since 2022-04-26 17:35  */ @RestController @RequestMapping("/api") @Slf4j public class TestController {     private final QueryService queryService;     public TestController(QueryService queryService) {       this.queryService = queryService;    }     /**     * 同步查询     * @return 结果     */    @GetMapping("/query")    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; query() {       // 计时       final TimeInterval timer = new TimeInterval();       timer.start();       Map&lt;String, Object&gt; map = queryService.query();       map.put("costTime", timer.intervalMs() + " ms");       return ResponseEntity.ok().body(map);    } }</code></pre> <p></p> <h4 id="5效果">5、效果</h4> <blockquote> <p>可以看到，两个接口一共耗费了10秒左右才返回。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/ecd240b3fcfc3cc1de45c1b6cab030c4.jpg" alt="一文搞定CompletableFuture并行处理，成倍缩短查询时间。"></p> <p></p> <h4 id="6completablefuture并行查询">6、CompletableFuture并行查询</h4> <blockquote> <p>现在我们来使用CompletableFuture改造下接口，并行查询两个HTTP接口再返回。</p> </blockquote> <pre><code class="language-java">package com.example.async.service;  import lombok.extern.slf4j.Slf4j; import org.springframework.stereotype.Service;  import java.util.HashMap; import java.util.Map; import java.util.concurrent.CompletableFuture;  /**  * &lt;p&gt;  * 查询服务  * &lt;/p&gt;  *  * @author 福隆苑居士，公众号：【Java分享客栈】  * @since 2022-04-26 17:38  */ @Service @Slf4j public class QueryService {    private final TwentyFourService twentyFourService;    private final ConstellationService constellationService;     public QueryService(TwentyFourService twentyFourService, ConstellationService constellationService) {       this.twentyFourService = twentyFourService;       this.constellationService = constellationService;    }     /**     * 异步返回结果     * @return 结果     */    public Map&lt;String, Object&gt; queryAsync() {        Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();        // 1、查询二十四节气       CompletableFuture&lt;String&gt; twentyFourQuery = CompletableFuture.supplyAsync(twentyFourService::getResult);       twentyFourQuery.thenAccept((result) -&gt; {          log.info("查询二十四节气结果：{}", result);          map.put("twentyFourResult", result);       }).exceptionally((e) -&gt; {          log.error("查询二十四节气异常: {}", e.getMessage(), e);          map.put("twentyFourResult", "");          return null;       });        // 2、查询星座       CompletableFuture&lt;String&gt; constellationQuery = CompletableFuture.supplyAsync(constellationService::getResult);       constellationQuery.thenAccept((result) -&gt; {          log.info("查询星座结果：{}", result);          map.put("constellationResult", result);       }).exceptionally((e) -&gt; {          log.error("查询星座异常: {}", e.getMessage(), e);          map.put("constellationResult", "");          return null;       });        // 3、allOf-两个查询必须都完成       CompletableFuture&lt;Void&gt; allQuery = CompletableFuture.allOf(twentyFourQuery, constellationQuery);       CompletableFuture&lt;Map&lt;String, Object&gt;&gt; future = allQuery.thenApply((result) -&gt; {          log.info("------------------ 全部查询都完成 ------------------ ");          return map;       }).exceptionally((e) -&gt; {          log.error(e.getMessage(), e);          return null;       });        // 获取异步方法返回值       // get()-内部抛出了异常需手动处理; join()-内部处理了异常无需手动处理，点进去一看便知。       future.join();        return map;    } }</code></pre> <p></p> <h4 id="7编写测试接口">7、编写测试接口</h4> <pre><code>package com.example.async.controller;  import cn.hutool.core.date.TimeInterval; import com.example.async.service.QueryService; import lombok.extern.slf4j.Slf4j; import org.springframework.http.ResponseEntity; import org.springframework.web.bind.annotation.GetMapping; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RestController;  import java.util.Map;  /**  * &lt;p&gt;  * 测试  * &lt;/p&gt;  *  * @author 福隆苑居士，公众号：【Java分享客栈】  * @since 2022-04-26 17:35  */ @RestController @RequestMapping("/api") @Slf4j public class TestController {     private final QueryService queryService;     public TestController(QueryService queryService) {       this.queryService = queryService;    }     /**     * 异步查询     * @return 结果     */    @GetMapping("/queryAsync")    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; queryAsync() {       // 计时       final TimeInterval timer = new TimeInterval();       timer.start();       Map&lt;String, Object&gt; map = queryService.queryAsync();       map.put("costTime", timer.intervalMs() + " ms");       return ResponseEntity.ok().body(map);    } }</code></pre> <p></p> <h4 id="8completablefuture效果">8、CompletableFuture效果</h4> <blockquote> <p>可以看到，时间缩短了一倍。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/ffe3adfeb532a5b1d421ae34fcc34fc9.jpg" alt="一文搞定CompletableFuture并行处理，成倍缩短查询时间。"></p> <p></p> <h4 id="9思考">9、思考</h4> <blockquote> <p>如果在微服务中，有一个很复杂的业务需要远程调用5个第三方laji厂家的接口，每个接口假设都耗时5秒，使用CompletableFuture并行处理最终需要多久？<br /> 答案是肯定的，同步查询需要25秒左右，CompletableFuture并行处理还是5秒左右，也就是说，同一个接口中，调用的耗时接口越多，CompletableFuture优化的幅度就越大。</p> </blockquote> <p></p> <h3 id="示例代码">示例代码</h3> <blockquote> <p>可以下载我的完整示例代码本地按需测试，里面有我的极速数据API的key，省得自己注册账号了，每天免费就100次，先到先得哦。</p> <p>链接：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://pan.baidu.com/doc/share/P_Jn_x22fos0ED3YEnqI8A-232386145447394"  target="_blank" rel="nofollow">https://pan.baidu.com/doc/share/P_Jn_x22fos0ED3YEnqI8A-232386145447394</a><br /> 提取码：piil</p> </blockquote> <p></p> <hr/> <p>觉得有帮助的话，就请顺手点个【推荐】吧，本人定期分享工作中的经验及趣事，原创文章均为手打，喜欢的话也可以关注一下哦~</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-78774.htm">JRebel热部署的使用</a></p>
+                                        <p>下一个：<a href="/news/article-79461.htm">动物诊疗许可证的申办程序是什么（动物诊疗许可证办理流程）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-55089.htm" title="1970年阴历四月二十七是什么星座 1970年阴历四月二十七是什么星座呢">1970年阴历四月二十七是什么星座 1970年阴历四月二十七是什么星座呢</a></li>
+                        <li class="py-2"><a href="/news/article-39316.htm" title="无货源网店怎么找商家合作是真的吗（无货源网店怎么操作）">无货源网店怎么找商家合作是真的吗（无货源网店怎么操作）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-free-subscribe-node.htm" title="1月27日→19.8M/S|免费节点SSR/Shadowrocket/V2ray/Clash2025年最新订阅链接地址">1月27日→19.8M/S|免费节点SSR/Shadowrocket/V2ray/Clash2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-37350.htm" title="ASP.NET Core使用EF查询数据_实用技巧">ASP.NET Core使用EF查询数据_实用技巧</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-free-node-subscribe.htm" title="2月17日→19M/S|免费节点SSR/Clash/Shadowrocket/V2ray2025年最新订阅链接地址">2月17日→19M/S|免费节点SSR/Clash/Shadowrocket/V2ray2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-56195.htm" title="哪家动物医院好（哪家动物医院好一点）">哪家动物医院好（哪家动物医院好一点）</a></li>
+                        <li class="py-2"><a href="/news/article-53990.htm" title="疫苗瓶回收上市公司（疫苗瓶原材料上市龙头公司）">疫苗瓶回收上市公司（疫苗瓶原材料上市龙头公司）</a></li>
+                        <li class="py-2"><a href="/news/article-60754.htm" title="哈尔滨宠物公园（哈尔滨宠物基地）">哈尔滨宠物公园（哈尔滨宠物基地）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-node-share.htm" title="3月6日→18.8M/S|免费节点SSR/Shadowrocket/Clash/V2ray2025年最新订阅链接地址">3月6日→18.8M/S|免费节点SSR/Shadowrocket/Clash/V2ray2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-free-node-subscribe.htm" title="3月5日→19.4M/S|免费节点Shadowrocket/V2ray/Clash/SSR2025年最新订阅链接地址">3月5日→19.4M/S|免费节点Shadowrocket/V2ray/Clash/SSR2025年最新订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
