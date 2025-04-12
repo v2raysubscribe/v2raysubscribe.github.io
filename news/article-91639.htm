@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-91639.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>pytorch定义新的自动求导函数</title>
+        <meta name="description" content="在pytorch中想自定义求导函数，通过实现torch.autograd.Function并重写forward和backward函数，来定义自己的自动求导运算。参考官网上的demo：传送门  直接上代" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray Subscribe免费梯子节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2raysubscribe.github.io/news/article-91639.htm" />
+    <meta property="og:site_name" content="V2ray Subscribe免费梯子节点分享官网" />
+    <meta property="og:title" content="pytorch定义新的自动求导函数" />
+    <meta property="og:image" content="https://v2raysubscribe.github.io/uploads/20241210/6e11f7f57f20340ae4a1af340dad7851.webp" />
+        <meta property="og:release_date" content="2025-04-09T09:16:12" />
+    <meta property="og:updated_time" content="2025-04-09T09:16:12" />
+        <meta property="og:description" content="在pytorch中想自定义求导函数，通过实现torch.autograd.Function并重写forward和backward函数，来定义自己的自动求导运算。参考官网上的demo：传送门  直接上代" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="pytorch定义新的自动求导函数">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://oss.maxcdn.com">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/client.htm">客户端</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>pytorch定义新的自动求导函数</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <ol> <li>在pytorch中想自定义求导函数，通过实现torch.autograd.Function并重写forward和backward函数，来定义自己的自动求导运算。参考官网上的demo：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://pytorch.org/tutorials/beginner/examples_autograd/two_layer_net_custom_function.html"  rel="nofollow">传送门</a> </li> <li>直接上代码，定义一个ReLu来实现自动求导</li> </ol> <pre><code class="prism language-python"><span class="token keyword">import</span> torch   <span class="token keyword">class</span> <span class="token class-name">MyRelu</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>autograd<span class="token punctuation">.</span>Function<span class="token punctuation">)</span><span class="token punctuation">:</span>     @<span class="token builtin">staticmethod</span>     <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment"># 我们使用ctx上下文对象来缓存，以便在反向传播中使用，ctx存储时候只能存tensor</span>         <span class="token comment"># 在正向传播中，我们接收一个上下文对象ctx和一个包含输入的张量input；</span>         <span class="token comment"># 我们必须返回一个包含输出的张量，</span>         <span class="token comment"># input.clamp(min = 0)表示讲输入中所有值范围规定到0到正无穷，如input=[-1,-2,3]则被转换成input=[0,0,3]</span>         ctx<span class="token punctuation">.</span>save_for_backward<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>                  <span class="token comment"># 返回几个值，backward接受参数则包含ctx和这几个值</span>         <span class="token keyword">return</span> <span class="token builtin">input</span><span class="token punctuation">.</span>clamp<span class="token punctuation">(</span><span class="token builtin">min</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>      @<span class="token builtin">staticmethod</span>     <span class="token keyword">def</span> <span class="token function">backward</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> grad_output<span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment"># 把ctx中存储的input张量读取出来</span>         <span class="token builtin">input</span><span class="token punctuation">,</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>saved_tensors                  <span class="token comment"># grad_output存放反向传播过程中的梯度</span>         grad_input <span class="token operator">=</span> grad_output<span class="token punctuation">.</span>clone<span class="token punctuation">(</span><span class="token punctuation">)</span>                  <span class="token comment"># 这儿就是ReLu的规则，表示原始数据小于0，则relu为0，因此对应索引的梯度都置为0</span>         grad_input<span class="token punctuation">[</span><span class="token builtin">input</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>         <span class="token keyword">return</span> grad_input </code></pre> <ol start="3"> <li>进行输入数据并测试</li> </ol> <pre><code class="prism language-python">dtype <span class="token operator">=</span> torch<span class="token punctuation">.</span><span class="token builtin">float</span> device <span class="token operator">=</span> torch<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">'cuda'</span> <span class="token keyword">if</span> torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token string">'cpu'</span><span class="token punctuation">)</span> <span class="token comment"># 使用torch的generator定义随机数，注意产生的是cpu随机数还是gpu随机数</span> generator<span class="token operator">=</span>torch<span class="token punctuation">.</span>Generator<span class="token punctuation">(</span>device<span class="token punctuation">)</span><span class="token punctuation">.</span>manual_seed<span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>  <span class="token comment"># N是Batch, H is hidden dimension，</span> <span class="token comment"># D_in is input dimension;D_out is output dimension.</span> N<span class="token punctuation">,</span> D_in<span class="token punctuation">,</span> H<span class="token punctuation">,</span> D_out <span class="token operator">=</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">10</span>  x <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>N<span class="token punctuation">,</span> D_in<span class="token punctuation">,</span> device<span class="token operator">=</span>device<span class="token punctuation">,</span> dtype<span class="token operator">=</span>dtype<span class="token punctuation">,</span>generator<span class="token operator">=</span>generator<span class="token punctuation">)</span> y <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>N<span class="token punctuation">,</span> D_out<span class="token punctuation">,</span> device<span class="token operator">=</span>device<span class="token punctuation">,</span> dtype<span class="token operator">=</span>dtype<span class="token punctuation">,</span> generator<span class="token operator">=</span>generator<span class="token punctuation">)</span>  w1 <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>D_in<span class="token punctuation">,</span> H<span class="token punctuation">,</span> device<span class="token operator">=</span>device<span class="token punctuation">,</span> dtype<span class="token operator">=</span>dtype<span class="token punctuation">,</span> requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> generator<span class="token operator">=</span>generator<span class="token punctuation">)</span> w2 <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>H<span class="token punctuation">,</span> D_out<span class="token punctuation">,</span> device<span class="token operator">=</span>device<span class="token punctuation">,</span> dtype<span class="token operator">=</span>dtype<span class="token punctuation">,</span> requires_grad<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> generator<span class="token operator">=</span>generator<span class="token punctuation">)</span>  learning_rate <span class="token operator">=</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">6</span> <span class="token keyword">for</span> t <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     relu <span class="token operator">=</span> MyRelu<span class="token punctuation">.</span><span class="token builtin">apply</span>     <span class="token comment"># 使用函数传入参数运算 </span>     y_pred <span class="token operator">=</span> relu<span class="token punctuation">(</span>x<span class="token punctuation">.</span>mm<span class="token punctuation">(</span>w1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mm<span class="token punctuation">(</span>w2<span class="token punctuation">)</span> 	<span class="token comment"># 计算损失</span>     loss <span class="token operator">=</span> <span class="token punctuation">(</span>y_pred <span class="token operator">-</span> y<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token keyword">if</span> t <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">==</span> <span class="token number">99</span><span class="token punctuation">:</span>         <span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> loss<span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment"># 传播</span>     loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token keyword">with</span> torch<span class="token punctuation">.</span>no_grad<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         w1 <span class="token operator">-=</span> learning_rate <span class="token operator">*</span> w1<span class="token punctuation">.</span>grad         w2 <span class="token operator">-=</span> learning_rate <span class="token operator">*</span> w2<span class="token punctuation">.</span>grad        	         w1<span class="token punctuation">.</span>grad<span class="token punctuation">.</span>zero_<span class="token punctuation">(</span><span class="token punctuation">)</span>         w2<span class="token punctuation">.</span>grad<span class="token punctuation">.</span>zero_<span class="token punctuation">(</span><span class="token punctuation">)</span> </code></pre> <ol start="4"> <li>暂时先做这些测试，如有问题，恳请指正</li> </ol> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-90989.htm">狗狗领养软件（狗狗领养的软件）</a></p>
+                                        <p>下一个：<a href="/news/article-91640.htm">中国兽药十大名牌厂家排名河南有几家（河南十大兽药品牌公司）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-76042.htm" title="CEPH-2：rbd功能详解及普通用户应用ceph集群">CEPH-2：rbd功能详解及普通用户应用ceph集群</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-subscribe-node.htm" title="3月22日→22.1M/S|免费节点Shadowrocket/SSR/Clash/V2ray2025年最新订阅链接地址">3月22日→22.1M/S|免费节点Shadowrocket/SSR/Clash/V2ray2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-78083.htm" title="win11系统怎么查看显卡信息">win11系统怎么查看显卡信息</a></li>
+                        <li class="py-2"><a href="/news/article-68124.htm" title="宠物品牌名称大全（好听的宠物品牌名字）">宠物品牌名称大全（好听的宠物品牌名字）</a></li>
+                        <li class="py-2"><a href="/news/article-87974.htm" title="动物疫苗打一次管多长时间有效（动物疫苗注射后多久产生抗体）">动物疫苗打一次管多长时间有效（动物疫苗注射后多久产生抗体）</a></li>
+                        <li class="py-2"><a href="/news/article-89428.htm" title="狗粮加工企业有哪些企业（狗粮制造厂）">狗粮加工企业有哪些企业（狗粮制造厂）</a></li>
+                        <li class="py-2"><a href="/news/article-82230.htm" title="动物疫苗生产资质（动物疫苗生产资质要求）">动物疫苗生产资质（动物疫苗生产资质要求）</a></li>
+                        <li class="py-2"><a href="/news/article-90181.htm" title="宠物店净利润高吗知乎（宠物店利润和成本分析）">宠物店净利润高吗知乎（宠物店利润和成本分析）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-node-subscribe.htm" title="3月11日→18.8M/S|免费节点V2ray/Shadowrocket/Clash/SSR2025年最新订阅链接地址">3月11日→18.8M/S|免费节点V2ray/Shadowrocket/Clash/SSR2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-node-subscribe.htm" title="3月14日→22.4M/S|免费节点SSR/Shadowrocket/Clash/V2ray2025年最新订阅链接地址">3月14日→22.4M/S|免费节点SSR/Shadowrocket/Clash/V2ray2025年最新订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">35</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
