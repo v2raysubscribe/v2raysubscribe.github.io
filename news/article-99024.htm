@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-99024.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Semaphore简单使用</title>
+        <meta name="description" content="&nbsp; 1、简介： Semaphore是Java的并发操作，用于多线程中，用于控制同时访问某个资源数，或某个操作的数量； 初始许可数可以通过new Semaphore的构造函数指定，releas" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray Subscribe免费梯子节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2raysubscribe.github.io/news/article-99024.htm" />
+    <meta property="og:site_name" content="V2ray Subscribe免费梯子节点分享官网" />
+    <meta property="og:title" content="Semaphore简单使用" />
+    <meta property="og:image" content="https://v2raysubscribe.github.io/uploads/20241210/ee09fa5544bfbb6ea4e6e1645b502136.webp" />
+        <meta property="og:release_date" content="2025-04-19T08:56:14" />
+    <meta property="og:updated_time" content="2025-04-19T08:56:14" />
+        <meta property="og:description" content="&nbsp; 1、简介： Semaphore是Java的并发操作，用于多线程中，用于控制同时访问某个资源数，或某个操作的数量； 初始许可数可以通过new Semaphore的构造函数指定，releas" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Semaphore简单使用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://oss.maxcdn.com">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/client.htm">客户端</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Semaphore简单使用</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp;</p> <p>1、简介：</p> <p>Semaphore是Java的并发操作，用于多线程中，用于控制同时访问某个资源数，或某个操作的数量；</p> <p>初始许可数可以通过new Semaphore的构造函数指定，release释放许可，acquire阻塞，如果没有释放，该方法会一直阻塞直到有许可，或操作超时</p> <p>2、通过打印机的互斥demo来简单使用Semaphor，也能更加理解Semaphore</p> <pre class="has"><code>import java.util.concurrent.Semaphore;  /**  * semaphore的使用  */ public class MutrxPrint {      /**      * 定义初始值为1的信号量(会先允许有一个线程执行，后来的会阻塞等待)      */     private static final Semaphore mSemaphore = new Semaphore(1);       private static void print() throws InterruptedException {         System.out.println("print-----1");         //先等待，请求许可         mSemaphore.acquire();         System.out.println("print-----2");         System.out.println("print-----3--" + Thread.currentThread().getName() + "---Enter");         Thread.sleep(1000);         System.out.println("print-----4--" + Thread.currentThread().getName() + "---正在打印.....");         Thread.sleep(1000);         System.out.println("print-----5--" + Thread.currentThread().getName() + "---outer.....");         mSemaphore.release();     }      public static void main(String[] args){         //开启10个线程抢占         for (int i = 0; i &lt; 10; i++) {             new Thread(new Runnable() {                 @Override                 public void run() {                     try {                         print();                     } catch (InterruptedException e) {                         e.printStackTrace();                     }                 }             }).start();         }     } }</code></pre> <p>&nbsp;输出结果：</p> <pre class="has"><code>print-----3--Thread-1---Enter print-----1 print-----1 print-----1 print-----1 print-----1 print-----1 print-----1 print-----1 print-----1 print-----4--Thread-1---正在打印..... print-----5--Thread-1---outer..... print-----2 print-----3--Thread-3---Enter print-----4--Thread-3---正在打印..... print-----5--Thread-3---outer..... print-----2</code></pre> <p>&nbsp;print---1说明是其他线程进来，由于acquire方法在阻塞，</p> <p>代码11行创建一个为1的许可数信号量，在调用print方法时代码17行会先判断是否还有剩余信号量许可数，有的话hui</p> <p>会继续往下执行，没有的话会阻塞，等到其他线程执行完并释放，也就是代码24行</p> <pre class="has"><code class="language-html">mSemaphore.release();之前阻塞的会继续执行 </code></pre> <p>3、连接池的模拟实现</p> <p>在项目中处理高并发时，一般数据库都会使用数据库连接池，假设现在数据库连接池最大连接数为10，当10个连接都分配出去以后，现在有用户继续请求连接，可能的处理：</p> <p>a、手动抛出异常，用户界面显示，服务器忙，稍后再试</p> <p>b、阻塞，等待其他连接的释放</p> <p>从用户体验上来说，更好的选择当然是阻塞，等待其他连接的释放，用户只会觉得稍微慢了一点，并不影响他的操作。下面使用Semaphore模拟实现一个数据库连接池：</p> <pre class="has"><code>import java.util.ArrayList; import java.util.List; import java.util.concurrent.Semaphore;  /**  * 连接池使用Semaphore  */ public class ConnectPool {     class Conn{}     private List&lt;Conn&gt; pools = new ArrayList&lt;&gt;(3);     private Semaphore mSemaphore = new Semaphore(3);     public ConnectPool() {         pools.add(new Conn());         pools.add(new Conn());         pools.add(new Conn());     }      /**      * 获取连接池的一个连接      * @return 连接池      */     private Conn getConn() throws InterruptedException {         mSemaphore.acquire();         System.out.println("------getConn--1--" + Thread.currentThread().getName());         Conn c = null;         //加这个同步的原因是为了防止两个线程同时走到这里，加入sync就可以防止将同一个conn 同时分配给这两个线程了         synchronized (ConnectPool.class){             c = pools.remove(0);         }         System.out.println("------getConn--2--" + Thread.currentThread().getName() + "---" + c);         return c;     }      /**      *      * @param c 释放连接池中的连接      */     private void releaseConn(Conn c){         pools.add(c);         System.out.println(Thread.currentThread().getName()+" release a conn " + c);         mSemaphore.release();     }      public static void main(String[] args){         ConnectPool mConnectPools = new ConnectPool();         new Thread(new Runnable() {             @Override             public void run() {                 try {                     Conn conn = mConnectPools.getConn();                     Thread.sleep(3000);                     mConnectPools.releaseConn(conn);                 } catch (InterruptedException e) {                     e.printStackTrace();                 }             }         }).start();          for (int i = 0; i &lt; 3; i++) {             new Thread(new Runnable() {                 @Override                 public void run() {                     try {                         Conn conn = mConnectPools.getConn();                     } catch (InterruptedException e) {                         e.printStackTrace();                     }                 }             }).start();         }     } }</code></pre> <p>输出日志：</p> <pre class="has"><code>------getConn--1--Thread-1 ------getConn--2--Thread-1---com.fengyu.cn.cha11.ConnectPool$Conn@2e4e6427 ------getConn--1--Thread-3 ------getConn--2--Thread-3---com.fengyu.cn.cha11.ConnectPool$Conn@1232cc0 ------getConn--1--Thread-0 ------getConn--2--Thread-0---com.fengyu.cn.cha11.ConnectPool$Conn@2eb0c802 Thread-0 release a conn com.fengyu.cn.cha11.ConnectPool$Conn@2eb0c802 ------getConn--1--Thread-2 ------getConn--2--Thread-2---com.fengyu.cn.cha11.ConnectPool$Conn@2eb0c802</code></pre> <p>测试时，让线程Thread-1获得连接池一个3秒的连接，同时又有3个线程去连接池获取连接，由于连接池中只有2个连接，所有有一个线程会等待，直到Thread-1释放连接池中的连接，他才会跟连接池连接上；</p> <p>好了文章有点啰嗦，有错误<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/lmj623565791/article/details/26810813"  rel="nofollow">希望各位提出一起探讨，学习</a>；</p> <p>文章转载：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/lmj623565791/article/details/26810813"  rel="nofollow">https://blog.csdn.net/lmj623565791/article/details/26810813</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-98335.htm">宠物粮厂家怎么找客源电话（宠物粮生产基地都在哪）</a></p>
+                                        <p>下一个：<a href="/news/article-99025.htm">移动破碎制砂一体机租赁合同（移动制砂机租赁价格）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-97567.htm" title="【Golang实战】反射设置结构体字段值">【Golang实战】反射设置结构体字段值</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-free-node-subscribe.htm" title="3月5日→19.4M/S|免费节点Shadowrocket/V2ray/Clash/SSR2025年最新订阅链接地址">3月5日→19.4M/S|免费节点Shadowrocket/V2ray/Clash/SSR2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-97568.htm" title="Java并发系列之JUC中的Lock锁与synchronized同步代码块问题_java_">Java并发系列之JUC中的Lock锁与synchronized同步代码块问题_java_</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-node-subscribe.htm" title="3月11日→18.8M/S|免费节点V2ray/Shadowrocket/Clash/SSR2025年最新订阅链接地址">3月11日→18.8M/S|免费节点V2ray/Shadowrocket/Clash/SSR2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-70049.htm" title="动物疫苗多长时间打一次合适（动物疫苗注射后多久产生抗体）">动物疫苗多长时间打一次合适（动物疫苗注射后多久产生抗体）</a></li>
+                        <li class="py-2"><a href="/news/article-67474.htm" title="河南兽药生产厂家名单（河南十大知名兽药厂家）">河南兽药生产厂家名单（河南十大知名兽药厂家）</a></li>
+                        <li class="py-2"><a href="/news/article-74024.htm" title="动物疫苗价格表图片高清版大全 动物疫苗价格表图片高清版大全集">动物疫苗价格表图片高清版大全 动物疫苗价格表图片高清版大全集</a></li>
+                        <li class="py-2"><a href="/news/article-98334.htm" title="三国杀新武将技能介绍（三国杀武将技能介绍大全）">三国杀新武将技能介绍（三国杀武将技能介绍大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-free-node-subscribe.htm" title="4月3日→18.1M/S|免费节点V2ray/SSR/Shadowrocket/Clash2025年最新订阅链接地址">4月3日→18.1M/S|免费节点V2ray/SSR/Shadowrocket/Clash2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-94625.htm" title="做梦梦到抱别的女人走路啥意思（梦见我抱别的女人）">做梦梦到抱别的女人走路啥意思（梦见我抱别的女人）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">56</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
