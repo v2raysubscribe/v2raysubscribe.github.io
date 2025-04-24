@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-101944.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>C++定义全局变量的方法</title>
+        <meta name="description" content="我们想定义一个全局变量，能够在多个文件中使用 //hello.h  #ifndef HELLO_H_ #define HELLO_H_ extern int a; void fun (); #endi" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray Subscribe免费梯子节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2raysubscribe.github.io/news/article-101944.htm" />
+    <meta property="og:site_name" content="V2ray Subscribe免费梯子节点分享官网" />
+    <meta property="og:title" content="C++定义全局变量的方法" />
+    <meta property="og:image" content="https://v2raysubscribe.github.io/uploads/20241210/a1d2d2e17a1dfa19d4fffe3335a04e22.webp" />
+        <meta property="og:release_date" content="2025-04-23T08:41:17" />
+    <meta property="og:updated_time" content="2025-04-23T08:41:17" />
+        <meta property="og:description" content="我们想定义一个全局变量，能够在多个文件中使用 //hello.h  #ifndef HELLO_H_ #define HELLO_H_ extern int a; void fun (); #endi" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C++定义全局变量的方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://oss.maxcdn.com">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/client.htm">客户端</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>C++定义全局变量的方法</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>我们想定义一个全局变量，能够在多个文件中使用</p> <pre class="has"><code>//hello.h  #ifndef HELLO_H_ #define HELLO_H_ extern int a; void fun (); #endif </code></pre> <pre class="has"><code>//hello.c  #include &lt;stdio.h&gt; #include "hello.h" int a = 0; void fun () { 	a = 1; 	printf("%d\n",a); }  </code></pre> <pre class="has"><code>//main.c    #include &lt;stdio.h&gt; #include "hello.h" int main () { 	fun(); 	a = 10; 	printf("%d\n",a); 	return 0; }  </code></pre> <p>输出结果为1，10；<br /> extern关键字来声明变量为外部变量，而为什么要在hello.h文件中已经extern int a了还要再在hello.c文件中定义int a呢？</p> <p>这是因为extern仅仅是作为一个声明，声明我要定义一个外部全局变量a可以在其他文件和模块中使用，但此时并为给a分配空间。<br /> 而int a = 0；则才是真正对a的定义，为其分配空间。<br /> 那么问题又来了，我们为什么不写成extern int a = 0;的形式不是更简单吗？</p> <p>这就涉及到c的一个基本知识点了也就是extern int a = 0和int a = 0同样都是对a的定义，只不过第二种是省略了extern而已。</p> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-101201.htm">北京宠物内科专家（北京宠物内科专家排名榜）</a></p>
+                                        <p>下一个：<a href="/news/article-101945.htm">领养宠物要钱么现在（领养宠物需要交钱吗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-88687.htm" title="微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白">微信小程序自定义顶部导航栏防止出现内容显示不全和出现空白</a></li>
+                        <li class="py-2"><a href="/news/article-74690.htm" title="合肥猫咪领养微信群 合肥猫咪领养微信群号">合肥猫咪领养微信群 合肥猫咪领养微信群号</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-24-node-share.htm" title="4月24日→19M/S|免费节点Shadowrocket/V2ray/Clash/SSR2025年最新订阅链接地址">4月24日→19M/S|免费节点Shadowrocket/V2ray/Clash/SSR2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-66848.htm" title="什么是动物疫苗,有哪些种类?（动物疫苗种类及类型）">什么是动物疫苗,有哪些种类?（动物疫苗种类及类型）</a></li>
+                        <li class="py-2"><a href="/news/article-66851.htm" title="北京去哪领养狗 北京去哪领养狗狗">北京去哪领养狗 北京去哪领养狗狗</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-free-node-subscribe.htm" title="3月4日→20.5M/S|免费节点Clash/Shadowrocket/V2ray/SSR2025年最新订阅链接地址">3月4日→20.5M/S|免费节点Clash/Shadowrocket/V2ray/SSR2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-9-free-subscribe-node.htm" title="4月9日→20.3M/S|免费节点Shadowrocket/Clash/V2ray/SSR2025年最新订阅链接地址">4月9日→20.3M/S|免费节点Shadowrocket/Clash/V2ray/SSR2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-72683.htm" title="宠物猫疫苗要多少钱（宠物猫接种疫苗多少钱）">宠物猫疫苗要多少钱（宠物猫接种疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-66224.htm" title="上海市青浦区二中分数线是多少（青浦二中大学录取率）">上海市青浦区二中分数线是多少（青浦二中大学录取率）</a></li>
+                        <li class="py-2"><a href="/news/article-87974.htm" title="动物疫苗打一次管多长时间有效（动物疫苗注射后多久产生抗体）">动物疫苗打一次管多长时间有效（动物疫苗注射后多久产生抗体）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
