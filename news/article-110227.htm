@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="canonical" href="https://v2raysubscribe.github.io/news/article-110227.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Spring Data Jpa 使用的hibernate 不支持 日期函数  to_char  的解决方案</title>
+        <meta name="description" content="今天在公司折腾了一天，写的心急火燎的，也弄得心情特别不好，因为老板就坐我的对面，就因为to_char-----&gt; to_char(date,‘YYYY-MM’)这个数据库函数在hibernate" />
+        <link rel="icon" href="/assets/website/img/v2raysubscribe/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray Subscribe免费梯子节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2raysubscribe.github.io/news/article-110227.htm" />
+    <meta property="og:site_name" content="V2ray Subscribe免费梯子节点分享官网" />
+    <meta property="og:title" content="Spring Data Jpa 使用的hibernate 不支持 日期函数  to_char  的解决方案" />
+    <meta property="og:image" content="https://v2raysubscribe.github.io/uploads/20241210/8a6a1f3dd48451d20f1ffdfa167c468a.webp" />
+        <meta property="og:release_date" content="2025-05-03T10:27:45" />
+    <meta property="og:updated_time" content="2025-05-03T10:27:45" />
+        <meta property="og:description" content="今天在公司折腾了一天，写的心急火燎的，也弄得心情特别不好，因为老板就坐我的对面，就因为to_char-----&gt; to_char(date,‘YYYY-MM’)这个数据库函数在hibernate" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring Data Jpa 使用的hibernate 不支持 日期函数  to_char  的解决方案">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://oss.maxcdn.com">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/bootstrap.min.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/helper.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/style.default.css" id="theme-stylesheet">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/owl.theme.css">
+    <!-- plugins-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/simpletextrotator">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/assets/website/css/v2raysubscribe/custom.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31NDSG4LH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-31NDSG4LH3');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div id="all">
+            <!-- navbar-->
+    <header class="header">
+        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                                                <span>V2ray Subscribe</span>
+                                            </a>
+                    <div class="navbar-buttons">
+                        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
+                    </div>
+                </div>
+                <div id="navigation" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                                                <li><a href="/">首页</a></li>
+                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                <li><a href="/client.htm">客户端</a></li>
+                                                <li><a href="/news/">新闻资讯</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+        <section id="intro" class="text-intro no-padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Spring Data Jpa 使用的hibernate 不支持 日期函数  to_char  的解决方案</h1>
+                        <p class="weight-300">
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--   *** FEATURES ***-->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p><span class="space" style="white-space:pre;text-indent:2em;line-height:inherit;"></span>今天在公司折腾了一天，写的心急火燎的，也弄得心情特别不好，因为老板就坐我的对面，就因为to_char-----&gt; to_char(date,‘YYYY-MM’)这个数据库函数在hibernate 中不能使用，但是在实际的业务中又是需要的，所以，没办法，我就各种google 和baidu，搜了一下午，都没有好的解决方案，因为得到的结论都是一样的，to_char() 这个数据库函数不能在hibernate中使用，晚上，吃饱了，无意中翻到了&nbsp; &nbsp;以下的两个地址&nbsp; &nbsp;http://bbs.csdn.net/wap/topics/390051012&nbsp; &nbsp;，http://blog.csdn.net/chenhuade85/article/details/7572148，&nbsp; 尤其是后面的这个地址 ， 文中分析的很到位，也更加更深刻的理解了hibernate.</p> <p style="text-indent:32px;"><span style="white-space:pre;">因为也看到了 可以使用year 和 month ，所以我就想到能不能通过分别查出来 他们的月份和年份，通过DTO 返回后，到前端】重新组合。实验了一下，果然可以。</span></p> <p style="text-indent:32px;"><span style="white-space:pre;"><span style="font-family:Arial, Verdana, sans-serif;font-size:14px;text-indent:32px;background-color:rgb(255,255,255);">DTO：</span></span></p> <table border="1" width="200" cellspacing="1" cellpadding="1"> <tbody> <tr> <td></p> <pre style="background-color:#ffffff;color:#000000;font-family:Menlo;font-size:9pt;"><span style="color:#808000;">@Data</span><span style="color:#808000;">@AllArgsConstructor</span><span style="color:#808000;">@NoArgsConstructor</span><span style="color:#000080;"><strong>public class</strong></span>StockInDTO {     String<span style="color:#660e7a;"><strong>supplier</strong></span>;     Long<span style="color:#660e7a;"><strong>count</strong></span>;<span style="color:#000080;"><strong>int</strong></span><span style="color:#660e7a;"><strong>year</strong></span>;<span style="color:#000080;"><strong>int</strong></span><span style="color:#660e7a;"><strong>month</strong></span>; }</pre> </td> </tr> </tbody> </table> <p><span class="space" style="white-space:pre;text-indent:2em;line-height:inherit;"></span>实体类：</p> <p style="text-indent:32px;"><span style="white-space:pre;"></span></p> <table border="1" width="200" cellspacing="1" cellpadding="1"> <tbody> <tr> <td> <pre style="background-color:#ffffff;color:#000000;font-family:Menlo;font-size:9pt;"><span style="color:#808000;">@Entity</span><span style="color:#808000;">@Table</span>(name=<span style="color:#008000;"><strong>"stockins"</strong></span>)<span style="color:#808000;">@Data</span><span style="color:#808000;">@ApiModel</span>(value =<span style="color:#008000;"><strong>"StockIn"</strong></span>, description =<span style="color:#008000;"><strong>"入库表"</strong></span>)<span style="color:#000080;"><strong>public class</strong></span>StockIn<span style="color:#000080;"><strong>extends</strong></span>AbstractAuditing {<span style="color:#808000;">@Id</span><span style="color:#808000;">    @ApiModelProperty</span>(value =<span style="color:#008000;"><strong>"入库ID=订单ID"</strong></span>, readOnly =<span style="color:#000080;"><strong>true</strong></span>)<span style="color:#000080;"><strong>private</strong></span>String<span style="color:#660e7a;"><strong>id</strong></span>;<span style="color:#808000;">@ApiModelProperty</span>(value =<span style="color:#008000;"><strong>"提货商"</strong></span>)<span style="color:#000080;"><strong>private</strong></span>String<span style="color:#660e7a;"><strong>supplier</strong></span>;<span style="color:#808000;">@ApiModelProperty</span>(value =<span style="color:#008000;"><strong>"车辆批次/提货次数"</strong></span>)<span style="color:#000080;"><strong>private</strong></span>String<span style="color:#660e7a;"><strong>supplierIndex</strong></span>;<span style="color:#808000;">@ApiModelProperty</span>(value =<span style="color:#008000;"><strong>"提货备注"</strong></span>)<span style="color:#000080;"><strong>private</strong></span>String<span style="color:#660e7a;"><strong>supplierComment</strong></span>;<span style="color:#808000;">@ApiModelProperty</span>(value =<span style="color:#008000;"><strong>"入库时间"</strong></span>, hidden =<span style="color:#000080;"><strong>true</strong></span>)<span style="color:#000080;"><strong>private</strong></span>Date<span style="color:#660e7a;"><strong>stockInAt</strong></span>;</pre> </td> </tr> </tbody> </table> <p>模拟数据内容:</p> <table border="1" width="200" cellspacing="1" cellpadding="1"> <tbody> <tr> <td> <pre style="background-color:#ffffff;color:#000000;font-family:Menlo;font-size:9pt;"><span style="color:#000080;"><strong>insert into</strong></span>stockins(id, stockInAt,  supplier, supplierIndex, supplierComment)<span style="color:#000080;"><strong>values</strong></span><span style="color:#000080;"><strong></strong></span>(<span style="color:#008000;"><strong>'Command1-001'</strong></span>,<span style="color:#008000;"><strong>'2017-01-01 00:00:00'</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>),        (<span style="color:#008000;"><strong>'Command1-002'</strong></span>,<span style="color:#008000;"><strong>'2017-01-01 00:00:00'</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>),        (<span style="color:#008000;"><strong>'Command1-003'</strong></span>,<span style="color:#008000;"><strong>'2017-02-01 00:00:00'</strong></span>,<span style="color:#008000;"><strong>'CBF'</strong></span>,<span style="color:#008000;"><strong>'3'</strong></span>,<span style="color:#008000;"><strong>'提货'</strong></span>),        (<span style="color:#008000;"><strong>'Command1-004'</strong></span>,<span style="color:#008000;"><strong>'2017-02-02 00:00:00'</strong></span>,<span style="color:#008000;"><strong>'CBF'</strong></span>,<span style="color:#008000;"><strong>'3'</strong></span>,<span style="color:#008000;"><strong>'提货'</strong></span>),        (<span style="color:#008000;"><strong>'Command1-005'</strong></span>,<span style="color:#008000;"><strong>'2017-03-01 00:00:00'</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>),        (<span style="color:#008000;"><strong>'Command3-000'</strong></span>,<span style="color:#008000;"><strong>'2017-11-01 00:00:00'</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>,<span style="color:#000080;"><strong>NULL</strong></span>),        (<span style="color:#008000;"><strong>'Command3-001'</strong></span>,<span style="color:#008000;"><strong>'2017-12-01 00:00:00'</strong></span>,<span style="color:#008000;"><strong>'CBF'</strong></span>,<span style="color:#008000;"><strong>'2'</strong></span>,<span style="color:#008000;"><strong>'提货'</strong></span>);</pre> </td> </tr> </tbody> </table> <p>接下来是重点：</p> <pre><code class="language-java">@Repository public interface StockInRepository extends     PagingAndSortingRepository&lt;StockIn, String&gt;,     JpaSpecificationExecutor&lt;StockIn&gt; {       @Query(value = "SELECT new com.yangnaihua123.domain.vm.StockInDTO(c.supplier, count(c.supplierIndex), year(c.stockInAt), month(c.stockInAt)) from StockIn c WHERE c.supplier &lt;&gt; null group by supplier, year(stockInAt), month(stockInAt)") // 以上的代码用到了进行年份和月份的分组     List&lt;StockInDTO&gt; findStockInCount(); }</code></pre> <p></p> <p style="text-indent:32px;"><span style="white-space:pre;"></span>所以通过List&lt;StockInDTO&gt; 往前端传输DTO，拿到了year和month 进行拼接就好了。</p> <p style="text-indent:32px;"><span style="white-space:pre;">不容易</span></p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-110222.htm">最小删除以在C ++中制作有效的括号</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-88688.htm" title=".NET性能优化-你应该为集合类型设置初始大小">.NET性能优化-你应该为集合类型设置初始大小</a></li>
+                        <li class="py-2"><a href="/news/article-109375.htm" title="什么是领养狗（什么是领养宠物）">什么是领养狗（什么是领养宠物）</a></li>
+                        <li class="py-2"><a href="/news/article-109378.htm" title="济南宠物领养网免费（济南领养猫咪的网站）">济南宠物领养网免费（济南领养猫咪的网站）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-5-2-free-high-speed-nodes.htm" title="5月2日→21.1M/S|免费节点SSR/Clash/Shadowrocket/V2ray2025年最新订阅链接地址">5月2日→21.1M/S|免费节点SSR/Clash/Shadowrocket/V2ray2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-95379.htm" title="DataView和DataTable的区别、联系、以及相互转化方法">DataView和DataTable的区别、联系、以及相互转化方法</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-5-3-free-node-subscribe-links.htm" title="5月3日→22.4M/S|免费节点V2ray/Shadowrocket/SSR/Clash2025年最新订阅链接地址">5月3日→22.4M/S|免费节点V2ray/Shadowrocket/SSR/Clash2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-87241.htm" title="宠物医院治仓鼠贵不贵呢（宠物医院治疗仓鼠费用）">宠物医院治仓鼠贵不贵呢（宠物医院治疗仓鼠费用）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-23-free-node-subscribe.htm" title="4月23日→21.1M/S|免费节点Shadowrocket/SSR/Clash/V2ray2025年最新订阅链接地址">4月23日→21.1M/S|免费节点Shadowrocket/SSR/Clash/V2ray2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-free-node-subscribe-links.htm" title="4月5日→22.7M/S|免费节点SSR/Shadowrocket/Clash/V2ray2025年最新订阅链接地址">4月5日→22.7M/S|免费节点SSR/Shadowrocket/Clash/V2ray2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-30-node-share-links.htm" title="4月30日→23M/S|免费节点V2ray/Shadowrocket/SSR/Clash2025年最新订阅链接地址">4月30日→23M/S|免费节点V2ray/Shadowrocket/SSR/Clash2025年最新订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="footer">
+            <div class="footer__copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>&copy;2025 Best company</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="credit pull-right">
+                                <a href="/">V2ray Subscribe免费梯子节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript files-->
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/bootstrap.min.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.cookie.js"> </script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/ekko-lightbox.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.simple-text-rotator.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/jquery.scrollTo.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/v2raysubscribe/front.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
