@@ -405,24 +405,9 @@ sysctl -p
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan TLS 伪装如何降低被封锁风险？</h5></div>
-    <div class="panel-body">
-        通过选择真实可访问的域名并安装有效证书，Trojan 流量可完全模拟 HTTPS 请求。这样可隐藏流量特征，降低被封锁和 DPI 检测的可能性，保证节点长期可用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的 JSON 配置文件常见语法错误如何快速定位？</h5></div>
-    <div class="panel-body">
-        通过 JSON 校验工具或编辑器（例如 VSCode）打开配置文件，查看语法高亮与错误提示；也可运行 sing-box 并观察控制台错误信息，错误通常会指出第几行或哪个字段不合法以便修正。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 如何导入订阅？</h5></div>
     <div class="panel-body">
         打开 Hiddify Next，进入主页点击“添加订阅”，输入机场提供的链接后确认。应用会自动同步节点并分类显示，支持一键测速与规则模式切换。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 支持订阅更新吗？</h5></div>
-    <div class="panel-body">
-        支持。Matsuri 内置订阅更新模块，可自动检测链接变化并定期刷新节点。用户还可手动点击更新按钮同步最新配置，保持网络连接的可用性与速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何把 Clash 规则与本地 hosts 文件结合使用？</h5></div>
@@ -430,19 +415,29 @@ sysctl -p
         可在 Clash 的 rules 中优先设置域名直连规则，并在系统 hosts 中添加常用站点的固定解析以加速 DNS 解析。注意 hosts 优先级高于 DNS，因此修改 hosts 需谨慎以避免与真实解析冲突。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 策略组如何根据延迟自动切换节点？</h5></div>
-    <div class="panel-body">
-        策略组会根据节点延迟和丢包率选择最佳节点。结合路由规则，可保证国内流量直连、海外流量走最优节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何实现广告拦截？</h5></div>
-    <div class="panel-body">
-        通过配置规则，将广告域名或请求路径匹配到黑名单策略，使请求直接阻断或重定向到本地地址。这样用户浏览网页或使用应用时可自动屏蔽大部分广告内容。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
     <div class="panel-body">
         在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的 JSON 配置文件常见语法错误如何快速定位？</h5></div>
+    <div class="panel-body">
+        通过 JSON 校验工具或编辑器（例如 VSCode）打开配置文件，查看语法高亮与错误提示；也可运行 sing-box 并观察控制台错误信息，错误通常会指出第几行或哪个字段不合法以便修正。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 支持订阅更新吗？</h5></div>
+    <div class="panel-body">
+        支持。Matsuri 内置订阅更新模块，可自动检测链接变化并定期刷新节点。用户还可手动点击更新按钮同步最新配置，保持网络连接的可用性与速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 可以设置自定义 DNS 吗？</h5></div>
+    <div class="panel-body">
+        支持自定义 DNS，可配置本地或远程 DNS 服务器，包括 DoH/DoT。正确配置可提升解析速度、防止 DNS 污染，提高访问稳定性和安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan TLS 伪装如何降低被封锁风险？</h5></div>
+    <div class="panel-body">
+        通过选择真实可访问的域名并安装有效证书，Trojan 流量可完全模拟 HTTPS 请求。这样可隐藏流量特征，降低被封锁和 DPI 检测的可能性，保证节点长期可用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 的脚本功能能实现哪些高级操作？</h5></div>
@@ -450,9 +445,14 @@ sysctl -p
         QuantumultX 支持 JavaScript 脚本，可用于请求重写、数据修改、自动签到、广告拦截等功能。用户可通过脚本中心导入开源脚本，极大增强应用的灵活性与自动化能力。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 可以设置自定义 DNS 吗？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何实现广告拦截？</h5></div>
     <div class="panel-body">
-        支持自定义 DNS，可配置本地或远程 DNS 服务器，包括 DoH/DoT。正确配置可提升解析速度、防止 DNS 污染，提高访问稳定性和安全性。    </div>
+        通过配置规则，将广告域名或请求路径匹配到黑名单策略，使请求直接阻断或重定向到本地地址。这样用户浏览网页或使用应用时可自动屏蔽大部分广告内容。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 策略组如何根据延迟自动切换节点？</h5></div>
+    <div class="panel-body">
+        策略组会根据节点延迟和丢包率选择最佳节点。结合路由规则，可保证国内流量直连、海外流量走最优节点，提高访问速度和连接稳定性，优化整体网络体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -481,16 +481,16 @@ sysctl -p
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-26-node-share.htm" title="11月26日→18.5M/S|免费节点SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点2025年最新订阅链接地址">11月26日→18.5M/S|免费节点SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-12-free-shadowrocket-node.htm" title="11月12日→21.5M/S|免费节点SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点2025年最新订阅链接地址">11月12日→21.5M/S|免费节点SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-23-free-v2ray-subscribe.htm" title="12月23日→20.7M/S|免费节点SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点2025年最新订阅链接地址">12月23日→20.7M/S|免费节点SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-10-free-shadowrocket-node.htm" title="11月10日→20.5M/S|免费节点V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点2025年最新订阅链接地址">11月10日→20.5M/S|免费节点V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-6-free-clash.htm" title="11月6日→20.6M/S|免费节点SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点2025年最新订阅链接地址">11月6日→20.6M/S|免费节点SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-18-free-clash-subscribe.htm" title="12月18日→20.5M/S|免费节点Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点2025年最新订阅链接地址">12月18日→20.5M/S|免费节点Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-6-free-clash.htm" title="12月6日→23M/S|免费节点Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点2025年最新订阅链接地址">12月6日→23M/S|免费节点Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-13-free-clash-subscribe.htm" title="12月13日→22.3M/S|免费节点Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点2025年最新订阅链接地址">12月13日→22.3M/S|免费节点Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-9-free-clash.htm" title="12月9日→19.2M/S|免费节点Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点2025年最新订阅链接地址">12月9日→19.2M/S|免费节点Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-21-free-ssr-subscribe.htm" title="12月21日→22.6M/S|免费节点Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点2025年最新订阅链接地址">12月21日→22.6M/S|免费节点Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-5-free-high-speed-nodes.htm" title="1月5日→22.6M/S|免费节点V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点2025年最新订阅链接地址">1月5日→22.6M/S|免费节点V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-26-clash-node.htm" title="12月26日→19M/S|免费节点V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点2025年最新订阅链接地址">12月26日→19M/S|免费节点V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-6-free-high-speed-nodes.htm" title="1月6日→18.7M/S|免费节点SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点2025年最新订阅链接地址">1月6日→18.7M/S|免费节点SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-4-clash-v2ray-ss-ssr.htm" title="1月4日→18.1M/S|免费节点V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点2025年最新订阅链接地址">1月4日→18.1M/S|免费节点V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-17-free-ssr-subscribe.htm" title="12月17日→20.1M/S|免费节点Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点2025年最新订阅链接地址">12月17日→20.1M/S|免费节点Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点2025年最新订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-1-3-clash-node.htm" title="1月3日→20.3M/S|免费节点Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点2025年最新订阅链接地址">1月3日→20.3M/S|免费节点Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-22-free-clash.htm" title="12月22日→23M/S|免费节点Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点2025年最新订阅链接地址">12月22日→23M/S|免费节点Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-16-free-v2ray-subscribe.htm" title="12月16日→19.8M/S|免费节点V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点2025年最新订阅链接地址">12月16日→19.8M/S|免费节点V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-24-free-clash-subscribe.htm" title="12月24日→19.6M/S|免费节点Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点2025年最新订阅链接地址">12月24日→19.6M/S|免费节点Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点2025年最新订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -502,13 +502,10 @@ sysctl -p
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                     </ul>
     </div>
