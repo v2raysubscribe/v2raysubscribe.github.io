@@ -298,14 +298,14 @@ Vmess的升级版，轻量且延迟低，适合追求极致性能的用户。</p
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 支持哪些类型的分流规则？</h5></div>
+    <div class="panel-body">
+        QuantumultX 支持域名、IP、端口、协议和用户自定义脚本分流。结合策略组使用，可实现精准流量控制，如广告屏蔽、视频加速和游戏优化，提高访问速度和体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 的节点导入方式有哪些？</h5></div>
     <div class="panel-body">
         Potatso Lite 支持通过手动添加节点信息或扫描二维码导入节点。虽然不支持自动订阅更新，但对轻量用户来说，手动方式足够使用，方便在 iOS 设备上管理节点。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 节点测速功能如何优化连接？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 定期测速节点延迟和丢包率，并结合策略组自动切换到最佳节点。保证网页、视频和游戏流量通过最优路径，提高访问速度和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的 TLS 配置如何增强抗封锁能力？</h5></div>
@@ -313,14 +313,9 @@ Vmess的升级版，轻量且延迟低，适合追求极致性能的用户。</p
         TLS 配置可将流量伪装成正常 HTTPS 请求，隐藏真实数据特征。结合域名伪装、WebSocket 或 QUIC 等传输方式，可有效绕过封锁，提高节点长期可用性和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 可以导入哪些格式的规则文件？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 节点测速功能如何优化连接？</h5></div>
     <div class="panel-body">
-        Surfboard 支持 YAML 和部分 JSON 格式的规则文件，用户可以导入节点、策略组和分流规则。注意文件格式和语法必须符合 Surfboard 规范，否则可能导入失败。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 支持哪些协议？</h5></div>
-    <div class="panel-body">
-        Clash 支持多种主流代理协议，包括 VMess、VLess、Trojan、Shadowsocks、Snell、Socks5 等。通过配置文件或订阅源，用户可以灵活组合不同协议的节点，实现复杂的分流策略与优先级控制。<hr />    </div>
+        Shadowrocket 定期测速节点延迟和丢包率，并结合策略组自动切换到最佳节点。保证网页、视频和游戏流量通过最优路径，提高访问速度和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 如何设置多入口实现不同访问控制？</h5></div>
@@ -333,19 +328,24 @@ Vmess的升级版，轻量且延迟低，适合追求极致性能的用户。</p
         可尝试切换传输协议（如 WS、gRPC）、调整 MTU 或启用 MUX 多路复用功能。同时检查服务器地理位置、带宽和延迟，并选择最优节点以降低延迟。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的核心组件有哪些？</h5></div>
+    <div class="panel-body">
+        V2Ray 的核心由 inbound、outbound、routing、policy 等模块组成。Inbound 处理入站请求，Outbound 负责出站连接，Routing 管理流量分流策略。模块化的设计让用户可以自由组合代理方式。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 支持多配置文件加载吗？</h5></div>
     <div class="panel-body">
         Clash 支持多配置切换，用户可在图形界面中导入多个 YAML 文件，并通过选择不同配置快速切换使用场景。例如家用模式、移动模式或公司网络模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 支持哪些类型的分流规则？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 可以导入哪些格式的规则文件？</h5></div>
     <div class="panel-body">
-        QuantumultX 支持域名、IP、端口、协议和用户自定义脚本分流。结合策略组使用，可实现精准流量控制，如广告屏蔽、视频加速和游戏优化，提高访问速度和体验。<hr />    </div>
+        Surfboard 支持 YAML 和部分 JSON 格式的规则文件，用户可以导入节点、策略组和分流规则。注意文件格式和语法必须符合 Surfboard 规范，否则可能导入失败。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的核心组件有哪些？</h5></div>
+    <div class="panel-heading"><h5>Clash 支持哪些协议？</h5></div>
     <div class="panel-body">
-        V2Ray 的核心由 inbound、outbound、routing、policy 等模块组成。Inbound 处理入站请求，Outbound 负责出站连接，Routing 管理流量分流策略。模块化的设计让用户可以自由组合代理方式。    </div>
+        Clash 支持多种主流代理协议，包括 VMess、VLess、Trojan、Shadowsocks、Snell、Socks5 等。通过配置文件或订阅源，用户可以灵活组合不同协议的节点，实现复杂的分流策略与优先级控制。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -374,16 +374,16 @@ Vmess的升级版，轻量且延迟低，适合追求极致性能的用户。</p
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-2-13-free-v2ray.htm" title="2月13日→19.7M/S|免费节点Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点2025年最新订阅链接地址">2月13日→19.7M/S|免费节点Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-21-free-v2ray.htm" title="1月21日→18.4M/S|免费节点SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点2025年最新订阅链接地址">1月21日→18.4M/S|免费节点SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-27-free-node-subscribe-links.htm" title="1月27日→21.8M/S|免费节点Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点2025年最新订阅链接地址">1月27日→21.8M/S|免费节点Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-28-free-v2ray.htm" title="1月28日→19.4M/S|免费节点Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点2025年最新订阅链接地址">1月28日→19.4M/S|免费节点Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-1-free-shadowrocket-node.htm" title="2月1日→21.1M/S|免费节点Trojan节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点2025年最新订阅链接地址">2月1日→21.1M/S|免费节点Trojan节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-10-free-subscribe-node.htm" title="2月10日→19.3M/S|免费节点V2ray节点/Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点2025年最新订阅链接地址">2月10日→19.3M/S|免费节点V2ray节点/Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-25-shadowrocket-node.htm" title="1月25日→22.9M/S|免费节点Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Clash节点2025年最新订阅链接地址">1月25日→22.9M/S|免费节点Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Clash节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-12-free-node-subscribe-links.htm" title="2月12日→20.9M/S|免费节点Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点2025年最新订阅链接地址">2月12日→20.9M/S|免费节点Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-23-clash-node.htm" title="2月23日→21.7M/S|免费节点Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点/Singbox节点2025年最新订阅链接地址">2月23日→21.7M/S|免费节点Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点/Singbox节点2025年最新订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-1-22-node-share.htm" title="1月22日→18.5M/S|免费节点Trojan节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点2025年最新订阅链接地址">1月22日→18.5M/S|免费节点Trojan节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-4-node-share.htm" title="2月4日→22.7M/S|免费节点V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点2025年最新订阅链接地址">2月4日→22.7M/S|免费节点V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-17-free-ssr-node.htm" title="1月17日→20.5M/S|免费节点V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点2025年最新订阅链接地址">1月17日→20.5M/S|免费节点V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-30-clash-node-daily-updates.htm" title="1月30日→22.3M/S|免费节点V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点2025年最新订阅链接地址">1月30日→22.3M/S|免费节点V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点2025年最新订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-29-shadowrocket-node.htm" title="1月29日→21.8M/S|免费节点Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点2025年最新订阅链接地址">1月29日→21.8M/S|免费节点Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-15-free-clash-subscribe.htm" title="2月15日→20M/S|免费节点Shadowrocket节点/Trojan节点/SSR节点/V2ray节点/Singbox节点/Clash节点2025年最新订阅链接地址">2月15日→20M/S|免费节点Shadowrocket节点/Trojan节点/SSR节点/V2ray节点/Singbox节点/Clash节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-18-node-share.htm" title="2月18日→21.2M/S|免费节点Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/SSR节点2025年最新订阅链接地址">2月18日→21.2M/S|免费节点Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/SSR节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-14-node-share.htm" title="1月14日→18.6M/S|免费节点SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点2025年最新订阅链接地址">1月14日→18.6M/S|免费节点SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-16-shadowrocket-node.htm" title="1月16日→20M/S|免费节点Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点2025年最新订阅链接地址">1月16日→20M/S|免费节点Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点2025年最新订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-27-free-node-subscribe-links.htm" title="1月27日→21.8M/S|免费节点Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点2025年最新订阅链接地址">1月27日→21.8M/S|免费节点Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点2025年最新订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -395,7 +395,7 @@ Vmess的升级版，轻量且延迟低，适合追求极致性能的用户。</p
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
+                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
