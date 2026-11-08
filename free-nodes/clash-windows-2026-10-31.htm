@@ -151,6 +151,36 @@
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>何为 fake-ip 模式，它的优缺点是什么？</h5></div>
+    <div class="panel-body">
+        fake-ip 是通过伪造 DNS 返回的 IP 地址让客户端透明代理流量，优点是兼容性好、无需修改应用代理设置；缺点是可能导致某些证书校验或 SNI 伪装失效，需要配合 DNS 与证书策略谨慎使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的主要特点是什么？</h5></div>
+    <div class="panel-body">
+        WinXray 是一款基于 V2Ray 核心的 Windows 客户端，界面直观，支持 VMess、VLess、Trojan、Shadowsocks 等多协议。它提供一键导入订阅、节点测速、自动分流等功能，是适合初学者和进阶用户的图形化代理工具。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 如何在 Android 上导入配置？</h5></div>
+    <div class="panel-body">
+        打开 Nekobox，点击“导入配置”按钮，选择订阅链接或本地 JSON 文件。程序会解析后自动生成节点列表，用户可一键连接或测速筛选最优节点。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 多路复用对高频连接的优势？</h5></div>
+    <div class="panel-body">
+        多路复用可让多个短连接共享同一通道，减少握手和加密开销，提高吞吐量。适合高频短连接场景，如即时通讯和游戏，保证流量快速、稳定传输。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 是什么？</h5></div>
+    <div class="panel-body">
+        Mihomo 是 Clash Premium 的开源替代项目，兼容原版 Clash 配置文件并扩展了部分新功能。它性能优异、内存占用低，适用于希望自定义构建代理环境的高级用户。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 服务器如何防止被扫描到真实 IP？</h5></div>
+    <div class="panel-body">
+        可以把 Trojan 部署在反向代理或 CDN 后端，使用 CDN 的中转与域名伪装；同时避免在服务器上暴露其他与域名不匹配的服务，关闭 FTP/SSH 直连并设置防火墙白名单。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Quantumult X 的分流规则如何设置？</h5></div>
     <div class="panel-body">
         Quantumult X 通过规则分组来控制流量走向。用户可自定义策略组，将特定网站流量指向不同节点。编辑规则文件时，可利用 GEOIP、DOMAIN-SUFFIX 等指令精确管理网络行为。<hr />    </div>
@@ -161,31 +191,6 @@
         通过选择真实可访问域名并使用有效证书，Trojan 流量可完全模拟 HTTPS 请求。隐藏真实流量特征，降低被封锁和 DPI 检测风险，保证节点长期可用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的主要特点是什么？</h5></div>
-    <div class="panel-body">
-        WinXray 是一款基于 V2Ray 核心的 Windows 客户端，界面直观，支持 VMess、VLess、Trojan、Shadowsocks 等多协议。它提供一键导入订阅、节点测速、自动分流等功能，是适合初学者和进阶用户的图形化代理工具。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 是什么？</h5></div>
-    <div class="panel-body">
-        Mihomo 是 Clash Premium 的开源替代项目，兼容原版 Clash 配置文件并扩展了部分新功能。它性能优异、内存占用低，适用于希望自定义构建代理环境的高级用户。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 如何在 Android 上导入配置？</h5></div>
-    <div class="panel-body">
-        打开 Nekobox，点击“导入配置”按钮，选择订阅链接或本地 JSON 文件。程序会解析后自动生成节点列表，用户可一键连接或测速筛选最优节点。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>何为 fake-ip 模式，它的优缺点是什么？</h5></div>
-    <div class="panel-body">
-        fake-ip 是通过伪造 DNS 返回的 IP 地址让客户端透明代理流量，优点是兼容性好、无需修改应用代理设置；缺点是可能导致某些证书校验或 SNI 伪装失效，需要配合 DNS 与证书策略谨慎使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 多路复用对高频连接的优势？</h5></div>
-    <div class="panel-body">
-        多路复用可让多个短连接共享同一通道，减少握手和加密开销，提高吞吐量。适合高频短连接场景，如即时通讯和游戏，保证流量快速、稳定传输。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 使用哪种加密算法？</h5></div>
     <div class="panel-body">
         Hysteria2 默认使用 AEAD 加密算法（如 ChaCha20-Poly1305），并可结合 TLS 层加密保障安全性。其设计兼顾速度与抗干扰能力，适合高延迟跨境网络环境。<hr />    </div>
@@ -193,12 +198,7 @@
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的 Rule Provider 自动更新规则如何操作？</h5></div>
     <div class="panel-body">
-        Rule Provider 可以通过远程 URL 自动下载规则和节点，定期更新无需手动操作。结合策略组使用，可保持节点和分流规则最新，提高访问速度和网络可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 服务器如何防止被扫描到真实 IP？</h5></div>
-    <div class="panel-body">
-        可以把 Trojan 部署在反向代理或 CDN 后端，使用 CDN 的中转与域名伪装；同时避免在服务器上暴露其他与域名不匹配的服务，关闭 FTP/SSH 直连并设置防火墙白名单。    </div>
+        Rule Provider 可以通过远程 URL 自动下载规则和节点，定期更新无需手动操作。结合策略组使用，可保持节点和分流规则最新，提高访问速度和网络可用性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -246,16 +246,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2026-9-30-clash-node.htm" title="9月30日→21.3M/S|免费节点Trojan节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点2025年最新订阅链接地址">9月30日→21.3M/S|免费节点Trojan节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点2025年最新订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-9-25.htm" title="9月25日→19.5M/S|免费节点V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点2025年最新订阅链接地址">9月25日→19.5M/S|免费节点V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点2025年最新订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-10-13.htm" title="10月13日→20.3M/S|免费节点V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点2025年最新订阅链接地址">10月13日→20.3M/S|免费节点V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点2025年最新订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-v2ray-subscribe-2026-10-9.htm" title="10月9日→19.1M/S|免费节点Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点2025年最新订阅链接地址">10月9日→19.1M/S|免费节点Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点2025年最新订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-30-node-share.htm" title="10月30日→19.1M/S|免费节点V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点2025年最新订阅链接地址">10月30日→19.1M/S|免费节点V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点2025年最新订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-10-3.htm" title="10月3日→21.4M/S|免费节点Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点2025年最新订阅链接地址">10月3日→21.4M/S|免费节点Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点2025年最新订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-27.htm" title="10月27日→19.4M/S|免费节点Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/V2ray节点/SSR节点2025年最新订阅链接地址">10月27日→19.4M/S|免费节点Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/V2ray节点/SSR节点2025年最新订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-10-6-free-clash.htm" title="10月6日→20.2M/S|免费节点Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点2025年最新订阅链接地址">10月6日→20.2M/S|免费节点Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点2025年最新订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-14-free-v2ray.htm" title="10月14日→21.6M/S|免费节点V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点2025年最新订阅链接地址">10月14日→21.6M/S|免费节点V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点2025年最新订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-v2ray-subscribe-2026-9-11.htm" title="9月11日→20.1M/S|免费节点SSR节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点2025年最新订阅链接地址">9月11日→20.1M/S|免费节点SSR节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点2025年最新订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-9.htm" title="9月9日→22.6M/S|免费节点V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点2025年最新订阅链接地址">9月9日→22.6M/S|免费节点V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点2025年最新订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-24-node-share.htm" title="9月24日→20.3M/S|免费节点V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点2025年最新订阅链接地址">9月24日→20.3M/S|免费节点V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点2025年最新订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-10-7.htm" title="10月7日→21.6M/S|免费节点SSR节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/Clash节点2025年最新订阅链接地址">10月7日→21.6M/S|免费节点SSR节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/Clash节点2025年最新订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-11.htm" title="10月11日→22.8M/S|免费节点Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点2025年最新订阅链接地址">10月11日→22.8M/S|免费节点Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Singbox节点2025年最新订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-6-free-clash.htm" title="9月6日→20.1M/S|免费节点Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点2025年最新订阅链接地址">9月6日→20.1M/S|免费节点Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点2025年最新订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-10-4-clash-v2ray-ss-ssr.htm" title="10月4日→20M/S|免费节点Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点2025年最新订阅链接地址">10月4日→20M/S|免费节点Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点2025年最新订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-10-17.htm" title="10月17日→20.1M/S|免费节点Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点2025年最新订阅链接地址">10月17日→20.1M/S|免费节点Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点2025年最新订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-9-5.htm" title="9月5日→19.5M/S|免费节点Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点2025年最新订阅链接地址">9月5日→19.5M/S|免费节点Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点2025年最新订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -267,7 +267,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
